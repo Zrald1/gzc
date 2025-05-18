@@ -719,5 +719,83 @@
     "confidence": 0.5,
     "created": 1747556633.0908728,
     "last_seen": 1747556633.090873
+  },
+  "1e235afc0f1d89b1c205d9c5d244a306": {
+    "type": "correction_event",
+    "data": {
+      "original_code": "// GZ UI Demo\n// This program demonstrates the UI capabilities of the GZ programming language.\n\n// Define UI elements\nui_element main_window {\n    type: window;\n    title: \"GZ UI Demo\";\n    width: 800;\n    height: 600;\n}\n\nui_element hello_button {\n    type: button;\n    text: \"Say Hello\";\n    width: 100;\n    height: 30;\n}\n\nui_element name_input {\n    type: textbox;\n    placeholder: \"Enter your name\";\n    width: 200;\n    height: 30;\n}\n\nui_element output_label {\n    type: label;\n    text: \"Output will appear here\";\n    width: 400;\n    height: 30;\n}\n\n// Define layout\nui_layout main_layout {\n    main_window -> name_input;\n    main_window -> hello_button;\n    main_window -> output_label;\n    \n    name_input @ (center, top + 100);\n    hello_button @ (center, below name_input + 20);\n    output_label @ (center, below hello_button + 20);\n}\n\n// Define style\nui_style button_style {\n    target: hello_button;\n    background-color: #3498db;\n    text-color: white;\n    font-size: 14;\n    border-radius: 5;\n}\n\nui_style input_style {\n    target: name_input;\n    border-color: #3498db;\n    border-width: 1;\n    font-size: 14;\n    padding: 5;\n}\n\nui_style label_style {\n    target: output_label;\n    text-color: #2c3e50;\n    font-size: 16;\n    font-weight: bold;\n}\n\n// Define events\nui_event main_events {\n    hello_button onClick: say_hello;\n}\n\n// Main function\nsimula main\n    // Initialize UI\n    init_ui()\n    \n    // Show main window\n    show_window(main_window)\n    \n    // Start UI event loop\n    ui_event_loop()\n    \n    balik 0\n\n// Event handler\nsimula say_hello\n    // Get name from input\n    name = get_text(name_input)\n    \n    // Check if name is empty\n    kung name == \"\"\n        name = \"World\"\n    \n    // Set output label text\n    set_text(output_label, \"Hello, \" + name + \"!\")\n    \n    balik tama\n",
+      "corrected_code": "// GZ UI Demo\n// This program demonstrates the UI capabilities of the GZ programming language.\n\n// Define UI elements\nui_element main_window \n    type: window\n    title: \"GZ UI Demo\"\n    width: 800\n    height: 600\n\n\nui_element hello_button \n    type: button\n    text: \"Say Hello\"\n    width: 100\n    height: 30\n\n\nui_element name_input \n    type: textbox\n    placeholder: \"Enter your name\"\n    width: 200\n    height: 30\n\n\nui_element output_label \n    type: label\n    text: \"Output will appear here\"\n    width: 400\n    height: 30\n\n\n// Define layout\nui_layout main_layout \n    main_window -> name_input\n    main_window -> hello_button\n    main_window -> output_label\n    \n    name_input @ (center, top + 100)\n    hello_button @ (center, below name_input + 20)\n    output_label @ (center, below hello_button + 20)\n\n\n// Define style\nui_style button_style \n    target: hello_button\n    background-color: #3498db\n    text-color: white\n    font-size: 14\n    border-radius: 5\n\n\nui_style input_style \n    target: name_input\n    border-color: #3498db\n    border-width: 1\n    font-size: 14\n    padding: 5\n\n\nui_style label_style \n    target: output_label\n    text-color: #2c3e50\n    font-size: 16\n    font-weight: bold\n\n\n// Define events\nui_event main_events \n    hello_button onClick: say_hello\n\n\n// Main function\nsimula main\n    // Initialize UI\n    init_ui \n    \n    // Show main window\n    show_window main_window\n    \n    // Start UI event loop\n    ui_event_loop \n    \n    balik 0\n\n// Event handler\nsimula say_hello\n    // Get name from input\n    name = get_text name_input\n    \n    // Check if name is empty\n    kung name == \"\"\n        name = \"World\"\n    \n    // Set output label text\n    set_text output_label, \"Hello, \" + name + \"!\"\n    \n    balik tama\n",
+      "error_message": null,
+      "applied_rules": [
+        "function_call_with_parentheses",
+        "semicolons",
+        "braces"
+      ],
+      "timestamp": 1747558409.0715156
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558409.0715911,
+    "last_seen": 1747558409.0715911
+  },
+  "3bbbc1ab6f96ee7d870837cdb5814fba": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "main",
+      "source": "examples/ui_demo.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558414.4260206,
+    "last_seen": 1747558414.426021
+  },
+  "1971123bea4ebbc03bb1e929363e8deb": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "say_hello",
+      "source": "examples/ui_demo.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558414.4360015,
+    "last_seen": 1747558414.4360015
+  },
+  "5d19fd8cebc6e4a70694cac58db99ff1": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "name",
+      "source": "examples/ui_demo.gz"
+    },
+    "frequency": 3,
+    "confidence": 0.5,
+    "created": 1747558414.4435472,
+    "last_seen": 1747558414.4514875
+  },
+  "8a8ab37b86a112c21686ff327b229ba8": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "name == \"\"",
+      "source": "examples/ui_demo.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558414.451735,
+    "last_seen": 1747558414.4517353
+  },
+  "83f8b1aac83703548e2fd68d60d6dffa": {
+    "type": "code_sample",
+    "data": {
+      "code": "// GZ UI Demo\n// This program demonstrates the UI capabilities of the GZ programming language.\n\n// Define UI elements\nui_element main_window \n    type: window\n    title: \"GZ UI Demo\"\n    width: 800\n    height: 600\n\n\nui_element hello_button \n    type: button\n    text: \"Say Hello\"\n    width: 100\n    height: 30\n\n\nui_element name_input \n    type: textbox\n    placeholder: \"Enter your name\"\n    width: 200\n    height: 30\n\n\nui_element output_label \n    type: label\n    text: \"Output will appear here\"\n    width: 400\n    height: 30\n\n\n// Define layout\nui_layout main_layout \n    main_window -> name_input\n    main_window -> hello_button\n    main_window -> output_label\n    \n    name_input @ (center, top + 100)\n    hello_button @ (center, below name_input + 20)\n    output_label @ (center, below hello_button + 20)\n\n\n// Define style\nui_style button_style \n    target: hello_button\n    background-color: #3498db\n    text-color: white\n    font-size: 14\n    border-radius: 5\n\n\nui_style input_style \n    target: name_input\n    border-color: #3498db\n    border-width: 1\n    font-size: 14\n    padding: 5\n\n\nui_style label_style \n    target: output_label\n    text-color: #2c3e50\n    font-size: 16\n    font-weight: bold\n\n\n// Define events\nui_event main_events \n    hello_button onClick: say_hello\n\n\n// Main function\nsimula main\n    // Initialize UI\n    init_ui \n    \n    // Show main window\n    show_window main_window\n    \n    // Start UI event loop\n    ui_event_loop \n    \n    balik 0\n\n// Event handler\nsimula say_hello\n    // Get name from input\n    name = get_text name_input\n    \n    // Check if name is empty\n    kung name == \"\"\n        name = \"World\"\n    \n    // Set output label text\n    set_text output_label, \"Hello, \" + name + \"!\"\n    \n    balik tama\n",
+      "source": "examples/ui_demo.gz",
+      "timestamp": 1747558414.4586322
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558414.4587078,
+    "last_seen": 1747558414.4587078
   }
 }

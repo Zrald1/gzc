@@ -1,18 +1,91 @@
 # GZ Collective Learning Summary
 
-Last updated: 2025-05-18 16:24:17
+Last updated: 2025-05-18 16:53:36
 
-Total learnings: 59
+Total learnings: 65
 Updates pushed: 0
 
 ## Learning Types
 
-- syntax_pattern: 49
-- code_sample: 2
+- syntax_pattern: 53
+- code_sample: 3
 - optimization_event: 1
 - optimization_rule: 7
+- correction_event: 1
 
 ## Recent Learnings
+
+### code_sample (2025-05-18)
+Frequency: 1, Confidence: 0.50
+
+```
+{
+  "code": "// GZ UI Demo\n// This program demonstrates the UI capabilities of the GZ programming language.\n\n// Define UI elements\nui_element main_window \n    type: window\n    title: \"GZ UI Demo\"\n    width: 800\n    height: 600\n\n\nui_element hello_button \n    type: button\n    text: \"Say Hello\"\n    width: 100\n    height: 30\n\n\nui_element name_input \n    type: textbox\n    placeholder: \"Enter your name\"\n    width: 200\n    height: 30\n\n\nui_element output_label \n    type: label\n    text: \"Output will appear here\"\n    width: 400\n    height: 30\n\n\n// Define layout\nui_layout main_layout \n    main_window -> name_input\n    main_window -> hello_button\n    main_window -> output_label\n    \n    name_input @ (center, top + 100)\n    hello_button @ (center, below name_input + 20)\n    output_label @ (center, below hello_button + 20)\n\n\n// Define style\nui_style button_style \n    target: hello_button\n    background-color: #3498db\n    text-color: white\n    font-size: 14\n    border-radius: 5\n\n\nui_style input_style \n    target: name_input\n    border-color: #3498db\n    border-width: 1\n    font-size: 14\n    padding: 5\n\n\nui_style label_style \n    target: output_label\n    text-color: #2c3e50\n    font-size: 16\n    font-weight: bold\n\n\n// Define events\nui_event main_events \n    hello_button onClick: say_hello\n\n\n// Main function\nsimula main\n    // Initialize UI\n    init_ui \n    \n    // Show main window\n    show_window main_window\n    \n    // Start UI event loop\n    ui_event_loop \n    \n    balik 0\n\n// Event handler\nsimula say_hello\n    // Get name from input\n    name = get_text name_input\n    \n    // Check if name is empty\n    kung name == \"\"\n        name = \"World\"\n    \n    // Set output label text\n    set_text output_label, \"Hello, \" + name + \"!\"\n    \n    balik tama\n",
+  "source": "examples/ui_demo.gz",
+  "timestamp": 1747558414.4586322
+}
+```
+
+### syntax_pattern (2025-05-18)
+Frequency: 1, Confidence: 0.50
+
+```
+{
+  "type": "conditionals",
+  "value": "name == \"\"",
+  "source": "examples/ui_demo.gz"
+}
+```
+
+### syntax_pattern (2025-05-18)
+Frequency: 3, Confidence: 0.50
+
+```
+{
+  "type": "variable_assignments",
+  "value": "name",
+  "source": "examples/ui_demo.gz"
+}
+```
+
+### syntax_pattern (2025-05-18)
+Frequency: 1, Confidence: 0.50
+
+```
+{
+  "type": "function_definitions",
+  "value": "say_hello",
+  "source": "examples/ui_demo.gz"
+}
+```
+
+### syntax_pattern (2025-05-18)
+Frequency: 1, Confidence: 0.50
+
+```
+{
+  "type": "function_definitions",
+  "value": "main",
+  "source": "examples/ui_demo.gz"
+}
+```
+
+### correction_event (2025-05-18)
+Frequency: 1, Confidence: 0.50
+
+```
+{
+  "original_code": "// GZ UI Demo\n// This program demonstrates the UI capabilities of the GZ programming language.\n\n// Define UI elements\nui_element main_window {\n    type: window;\n    title: \"GZ UI Demo\";\n    width: 800;\n    height: 600;\n}\n\nui_element hello_button {\n    type: button;\n    text: \"Say Hello\";\n    width: 100;\n    height: 30;\n}\n\nui_element name_input {\n    type: textbox;\n    placeholder: \"Enter your name\";\n    width: 200;\n    height: 30;\n}\n\nui_element output_label {\n    type: label;\n    text: \"Output will appear here\";\n    width: 400;\n    height: 30;\n}\n\n// Define layout\nui_layout main_layout {\n    main_window -> name_input;\n    main_window -> hello_button;\n    main_window -> output_label;\n    \n    name_input @ (center, top + 100);\n    hello_button @ (center, below name_input + 20);\n    output_label @ (center, below hello_button + 20);\n}\n\n// Define style\nui_style button_style {\n    target: hello_button;\n    background-color: #3498db;\n    text-color: white;\n    font-size: 14;\n    border-radius: 5;\n}\n\nui_style input_style {\n    target: name_input;\n    border-color: #3498db;\n    border-width: 1;\n    font-size: 14;\n    padding: 5;\n}\n\nui_style label_style {\n    target: output_label;\n    text-color: #2c3e50;\n    font-size: 16;\n    font-weight: bold;\n}\n\n// Define events\nui_event main_events {\n    hello_button onClick: say_hello;\n}\n\n// Main function\nsimula main\n    // Initialize UI\n    init_ui()\n    \n    // Show main window\n    show_window(main_window)\n    \n    // Start UI event loop\n    ui_event_loop()\n    \n    balik 0\n\n// Event handler\nsimula say_hello\n    // Get name from input\n    name = get_text(name_input)\n    \n    // Check if name is empty\n    kung name == \"\"\n        name = \"World\"\n    \n    // Set output label text\n    set_text(output_label, \"Hello, \" + name + \"!\")\n    \n    balik tama\n",
+  "corrected_code": "// GZ UI Demo\n// This program demonstrates the UI capabilities of the GZ programming language.\n\n// Define UI elements\nui_element main_window \n    type: window\n    title: \"GZ UI Demo\"\n    width: 800\n    height: 600\n\n\nui_element hello_button \n    type: button\n    text: \"Say Hello\"\n    width: 100\n    height: 30\n\n\nui_element name_input \n    type: textbox\n    placeholder: \"Enter your name\"\n    width: 200\n    height: 30\n\n\nui_element output_label \n    type: label\n    text: \"Output will appear here\"\n    width: 400\n    height: 30\n\n\n// Define layout\nui_layout main_layout \n    main_window -> name_input\n    main_window -> hello_button\n    main_window -> output_label\n    \n    name_input @ (center, top + 100)\n    hello_button @ (center, below name_input + 20)\n    output_label @ (center, below hello_button + 20)\n\n\n// Define style\nui_style button_style \n    target: hello_button\n    background-color: #3498db\n    text-color: white\n    font-size: 14\n    border-radius: 5\n\n\nui_style input_style \n    target: name_input\n    border-color: #3498db\n    border-width: 1\n    font-size: 14\n    padding: 5\n\n\nui_style label_style \n    target: output_label\n    text-color: #2c3e50\n    font-size: 16\n    font-weight: bold\n\n\n// Define events\nui_event main_events \n    hello_button onClick: say_hello\n\n\n// Main function\nsimula main\n    // Initialize UI\n    init_ui \n    \n    // Show main window\n    show_window main_window\n    \n    // Start UI event loop\n    ui_event_loop \n    \n    balik 0\n\n// Event handler\nsimula say_hello\n    // Get name from input\n    name = get_text name_input\n    \n    // Check if name is empty\n    kung name == \"\"\n        name = \"World\"\n    \n    // Set output label text\n    set_text output_label, \"Hello, \" + name + \"!\"\n    \n    balik tama\n",
+  "error_message": null,
+  "applied_rules": [
+    "function_call_with_parentheses",
+    "semicolons",
+    "braces"
+  ],
+  "timestamp": 1747558409.0715156
+}
+```
 
 ### code_sample (2025-05-18)
 Frequency: 1, Confidence: 0.50
@@ -54,72 +127,6 @@ Frequency: 3, Confidence: 0.50
 {
   "type": "loops",
   "value": "i",
-  "source": "examples/advanced_patterns.gz"
-}
-```
-
-### syntax_pattern (2025-05-18)
-Frequency: 1, Confidence: 0.50
-
-```
-{
-  "type": "conditionals",
-  "value": "is_prime(num)",
-  "source": "examples/advanced_patterns.gz"
-}
-```
-
-### syntax_pattern (2025-05-18)
-Frequency: 1, Confidence: 0.50
-
-```
-{
-  "type": "conditionals",
-  "value": "arr[j] > arr[j + 1]",
-  "source": "examples/advanced_patterns.gz"
-}
-```
-
-### syntax_pattern (2025-05-18)
-Frequency: 1, Confidence: 0.50
-
-```
-{
-  "type": "conditionals",
-  "value": "n % i == 0 or n % (i + 2) == 0",
-  "source": "examples/advanced_patterns.gz"
-}
-```
-
-### syntax_pattern (2025-05-18)
-Frequency: 1, Confidence: 0.50
-
-```
-{
-  "type": "conditionals",
-  "value": "n % 2 == 0 or n % 3 == 0",
-  "source": "examples/advanced_patterns.gz"
-}
-```
-
-### syntax_pattern (2025-05-18)
-Frequency: 1, Confidence: 0.50
-
-```
-{
-  "type": "conditionals",
-  "value": "n <= 3",
-  "source": "examples/advanced_patterns.gz"
-}
-```
-
-### syntax_pattern (2025-05-18)
-Frequency: 1, Confidence: 0.50
-
-```
-{
-  "type": "conditionals",
-  "value": "n <= 1",
   "source": "examples/advanced_patterns.gz"
 }
 ```
