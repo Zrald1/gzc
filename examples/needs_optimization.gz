@@ -1,0 +1,75 @@
+// GZ Program that needs optimization
+// This program demonstrates various patterns that can be optimized
+
+simula main
+    // Inefficient variable assignments
+    x = 10
+    x = x + 1
+    y = 20
+    y = y - 5
+    z = 30
+    z = z * 2
+    
+    // Inefficient boolean comparisons
+    flag1 = tama
+    flag2 = mali
+    
+    kung flag1 == tama
+        sulat "Flag1 is true"
+    
+    kung flag2 == mali
+        sulat "Flag2 is false"
+    
+    // Inefficient loop syntax
+    para i = 1 hanggang 5
+        sulat "Iteration", i
+    
+    // Inefficient string concatenation
+    message = "Hello"
+    message = message + ", "
+    message = message + "World"
+    message = message + "!"
+    sulat message
+    
+    // Inefficient array operations
+    numbers = []
+    numbers.append(1)
+    numbers.append(2)
+    numbers.append(3)
+    numbers.append(4)
+    numbers.append(5)
+    
+    sum = 0
+    para i = 0 hanggang len(numbers) - 1
+        sum = sum + numbers[i]
+    
+    sulat "Sum:", sum
+    
+    // Inefficient conditional checks
+    value = 42
+    
+    kung value > 0
+        kung value < 100
+            sulat "Value is between 0 and 100"
+    
+    // Inefficient function calls
+    result1 = calculate(10)
+    result2 = calculate(20)
+    result3 = calculate(30)
+    
+    sulat "Results:", result1, result2, result3
+    
+    balik 0
+
+// Inefficient function implementation
+simula calculate input
+    // Unnecessary temporary variables
+    temp1 = input * 2
+    temp2 = temp1 + 5
+    temp3 = temp2 / 3
+    
+    // Inefficient loop
+    para i = 0 hanggang 3
+        temp3 = temp3 + i
+    
+    balik temp3

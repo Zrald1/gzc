@@ -72,8 +72,11 @@ class GZCompiler:
         self.ai_auto_update = not args.no_auto_update
         self.force_update = args.force_update
         self.show_ai_stats = args.ai_stats
+        self.show_ai_evolution = args.ai_evolution
         self.ai_interactive = args.ai_interactive
         self.ai_model_path = args.ai_model
+        self.ai_learn_file = args.ai_learn
+        self.ai_optimize_file = args.ai_optimize
         self.generate_code = args.generate is not None
         self.generate_description = args.generate
         self.explain_code = args.explain
@@ -163,6 +166,109 @@ class GZCompiler:
                 print(f"Last improvement: {si_stats.get('last_improvement', 'Never')}")
 
             return True
+
+        # Handle AI evolution stats
+        if self.show_ai_evolution:
+            if not self.ai:
+                logger.error("AI capabilities required for AI evolution stats")
+                return False
+
+            logger.info("Showing AI evolution statistics")
+
+            # Get evolution stats
+            if hasattr(self.ai, 'get_evolution_stats'):
+                evolution_stats = self.ai.get_evolution_stats()
+
+                # Print evolution stats in a readable format
+                print("\nGZ AI Evolution Statistics")
+                print("=========================")
+                print(f"Learning iterations: {evolution_stats.get('learning_iterations', 0)}")
+                print(f"Current learning rate: {evolution_stats.get('current_learning_rate', 0):.6f}")
+                print(f"Learning acceleration: {evolution_stats.get('learning_acceleration', 1.0):.2f}x")
+
+                # Print learning progress
+                if 'learning_progress' in evolution_stats:
+                    print("\nLearning Progress")
+                    print("----------------")
+                    progress = evolution_stats['learning_progress']
+                    print(f"Syntax understanding: {progress.get('syntax_understanding', 0):.2f}%")
+                    print(f"Optimization capability: {progress.get('optimization_capability', 0):.2f}%")
+                    print(f"Error correction: {progress.get('error_correction', 0):.2f}%")
+                    print(f"Code generation: {progress.get('code_generation', 0):.2f}%")
+
+                # Print evolution history
+                if 'evolution_history' in evolution_stats:
+                    print("\nEvolution History")
+                    print("----------------")
+                    history = evolution_stats['evolution_history']
+                    for i, entry in enumerate(history[-5:], 1):  # Show last 5 entries
+                        print(f"{i}. {entry.get('date', 'Unknown')}: {entry.get('description', 'Unknown')}")
+
+                return True
+            else:
+                logger.error("Evolution statistics not available")
+                return False
+
+        # Handle AI learn
+        if self.ai_learn_file:
+            if not self.ai:
+                logger.error("AI capabilities required for learning")
+                return False
+
+            logger.info(f"Learning from file: {self.ai_learn_file}")
+
+            try:
+                # Read the file
+                with open(self.ai_learn_file, 'r') as f:
+                    code = f.read()
+
+                # Process the code
+                result = self.ai.process_code(code, {"source_file": self.ai_learn_file})
+
+                # Print results
+                print("\nLearning Results")
+                print("===============")
+                print(f"Learning iterations: {result.get('learning', {}).get('learning_iterations', 0)}")
+                print(f"Patterns learned: {result.get('learning', {}).get('patterns_learned', 0)}")
+
+                return True
+            except Exception as e:
+                logger.error(f"Error learning from file: {str(e)}")
+                return False
+
+        # Handle AI optimize
+        if self.ai_optimize_file:
+            if not self.ai:
+                logger.error("AI capabilities required for optimization")
+                return False
+
+            logger.info(f"Optimizing file: {self.ai_optimize_file}")
+
+            try:
+                # Read the file
+                with open(self.ai_optimize_file, 'r') as f:
+                    code = f.read()
+
+                # Optimize the code
+                result = self.ai.optimize_code(code, self.optimization_level)
+
+                # Print results
+                print("\nOptimization Results")
+                print("===================")
+                print(f"Techniques applied: {len(result.get('techniques_applied', []))}")
+                print(f"Code size reduction: {result.get('code_size_reduction', 0)} bytes")
+
+                # Write optimized code to output file
+                output_file = self.output_file or f"{self.ai_optimize_file}.opt"
+                with open(output_file, 'w') as f:
+                    f.write(result.get('optimized_code', code))
+
+                print(f"\nOptimized code written to: {output_file}")
+
+                return True
+            except Exception as e:
+                logger.error(f"Error optimizing file: {str(e)}")
+                return False
 
         # Regular compilation
         if not self.source_file and not self.generate_code:
@@ -343,6 +449,9 @@ def main():
     parser.add_argument("--ai-stats", action="store_true", help="Show AI statistics")
     parser.add_argument("--ai-interactive", action="store_true", help="Enable interactive mode")
     parser.add_argument("--ai-model", default="models/gz_ai_model.bin", help="Path to AI model")
+    parser.add_argument("--ai-learn", help="Learn from a code file without compiling it")
+    parser.add_argument("--ai-optimize", help="Optimize a code file without compiling it")
+    parser.add_argument("--ai-evolution", action="store_true", help="Show AI evolution statistics")
     parser.add_argument("-g", "--generate", help="Generate code from description")
     parser.add_argument("-e", "--explain", action="store_true", help="Explain the code")
 

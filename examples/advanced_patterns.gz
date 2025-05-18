@@ -1,0 +1,126 @@
+// Advanced GZ Programming Patterns
+// This file demonstrates advanced programming patterns in GZ
+
+// Advanced function with multiple parameters and return value
+simula calculate_statistics numbers
+    // Variable declarations
+    count = len(numbers)
+    sum = 0
+    min_val = numbers[0]
+    max_val = numbers[0]
+    
+    // Calculate sum, min, and max
+    para i 0 count - 1
+        current = numbers[i]
+        sum = sum + current
+        
+        kung current < min_val
+            min_val = current
+        
+        kung current > max_val
+            max_val = current
+    
+    // Calculate average
+    average = sum / count
+    
+    // Create and return statistics object
+    stats = {
+        "count": count,
+        "sum": sum,
+        "average": average,
+        "min": min_val,
+        "max": max_val,
+        "range": max_val - min_val
+    }
+    
+    balik stats
+
+// Function to generate Fibonacci sequence
+simula fibonacci n
+    // Handle edge cases
+    kung n <= 0
+        balik []
+    kung n == 1
+        balik [0]
+    kung n == 2
+        balik [0, 1]
+    
+    // Initialize sequence with first two numbers
+    sequence = [0, 1]
+    
+    // Generate remaining numbers
+    para i 2 n - 1
+        next_number = sequence[i-1] + sequence[i-2]
+        sequence.append(next_number)
+    
+    balik sequence
+
+// Function to check if a number is prime
+simula is_prime n
+    // Handle edge cases
+    kung n <= 1
+        balik mali
+    kung n <= 3
+        balik tama
+    kung n % 2 == 0 or n % 3 == 0
+        balik mali
+    
+    // Check for divisibility by numbers of form 6k ± 1
+    i = 5
+    habang i * i <= n
+        kung n % i == 0 or n % (i + 2) == 0
+            balik mali
+        i = i + 6
+    
+    balik tama
+
+// Function to sort an array using bubble sort
+simula bubble_sort arr
+    n = len(arr)
+    
+    // Traverse through all array elements
+    para i 0 n - 1
+        // Last i elements are already in place
+        para j 0 n - i - 1
+            // Swap if current element is greater than next element
+            kung arr[j] > arr[j + 1]
+                temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+    
+    balik arr
+
+// Main function to demonstrate the advanced patterns
+simula main
+    // Test calculate_statistics function
+    numbers = [23, 45, 12, 67, 89, 34, 56]
+    sulat "Statistics for", numbers
+    stats = calculate_statistics(numbers)
+    sulat "Count:", stats["count"]
+    sulat "Sum:", stats["sum"]
+    sulat "Average:", stats["average"]
+    sulat "Min:", stats["min"]
+    sulat "Max:", stats["max"]
+    sulat "Range:", stats["range"]
+    
+    // Test fibonacci function
+    n = 10
+    sulat "\nFibonacci sequence of length", n
+    fib_sequence = fibonacci(n)
+    sulat fib_sequence
+    
+    // Test is_prime function
+    sulat "\nChecking prime numbers:"
+    para num 10 20
+        kung is_prime(num)
+            sulat num, "is prime"
+        kundi
+            sulat num, "is not prime"
+    
+    // Test bubble_sort function
+    unsorted = [64, 34, 25, 12, 22, 11, 90]
+    sulat "\nUnsorted array:", unsorted
+    sorted = bubble_sort(unsorted)
+    sulat "Sorted array:", sorted
+    
+    balik 0
