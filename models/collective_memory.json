@@ -191,5 +191,533 @@
     "confidence": 0.5,
     "created": 1747556408.9724824,
     "last_seen": 1747556408.972483
+  },
+  "ae0c9ed0b0cbe81e31c4d940955f42fa": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "calculate_statistics",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.9190361,
+    "last_seen": 1747556632.9190364
+  },
+  "a5db5f1a8509456d506ef3e944c271db": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "fibonacci",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.922197,
+    "last_seen": 1747556632.922197
+  },
+  "e8f8bb11cadc6a03880d8cce476528c6": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "is_prime",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.9257164,
+    "last_seen": 1747556632.9257166
+  },
+  "c3aeb6f093a12c29e62e290502f3b63a": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "bubble_sort",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.929837,
+    "last_seen": 1747556632.9298372
+  },
+  "7691e277cb2af5cef658956b8cacb000": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "main",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.9328215,
+    "last_seen": 1747556632.9328215
+  },
+  "41be9060bd58639b70a3f4ecf08ab167": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "len",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 2,
+    "confidence": 0.5,
+    "created": 1747556632.9356654,
+    "last_seen": 1747556632.9424894
+  },
+  "9632b4d2527010f8ccaee82c1a428a34": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "append",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.938629,
+    "last_seen": 1747556632.938629
+  },
+  "b5994bf9e1c3e9e352de30197c6110ad": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "calculate_statistics",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.9427142,
+    "last_seen": 1747556632.9427142
+  },
+  "6c73b4fa974b7c507eb8310b9d5386de": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "fibonacci",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.9463289,
+    "last_seen": 1747556632.9463289
+  },
+  "261a5b7c69236996ca7db1b0e56a98e8": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "is_prime",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.949481,
+    "last_seen": 1747556632.9494812
+  },
+  "e5526ddc7a40ee8883e1dc479176a668": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "bubble_sort",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.952762,
+    "last_seen": 1747556632.9527621
+  },
+  "5fb93717ab14a0047b35f33f15815831": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "count",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.9558778,
+    "last_seen": 1747556632.9558783
+  },
+  "cb1cb6901537e404a50658d8337d7896": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "sum",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 2,
+    "confidence": 0.5,
+    "created": 1747556632.960012,
+    "last_seen": 1747556632.9732356
+  },
+  "230112c347fa935920207ea9f29ba1df": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "min_val",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 2,
+    "confidence": 0.5,
+    "created": 1747556632.9632466,
+    "last_seen": 1747556632.973918
+  },
+  "e076e4fda806748144d4b5aa295ea3f8": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "max_val",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 2,
+    "confidence": 0.5,
+    "created": 1747556632.9667165,
+    "last_seen": 1747556632.9741554
+  },
+  "3e94adac32f7995ac3e6960d7ccf32ef": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "current",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.9699643,
+    "last_seen": 1747556632.9699645
+  },
+  "feda76f9e638ac7ccdb4f3bd30f79be9": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "average",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.9743793,
+    "last_seen": 1747556632.9743795
+  },
+  "06a9acc07dc58a358b2b518171dda7f6": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "stats",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 2,
+    "confidence": 0.5,
+    "created": 1747556632.9783697,
+    "last_seen": 1747556633.0146775
+  },
+  "45ab02c215997067f34a104827ef1012": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "n",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 4,
+    "confidence": 0.5,
+    "created": 1747556632.9818783,
+    "last_seen": 1747556633.014809
+  },
+  "ee4cd11185b2071397205e5fa5fc8321": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "sequence",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.9856327,
+    "last_seen": 1747556632.9856331
+  },
+  "f91774c93b979b5ac39f4c057e5f3e07": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "next_number",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.989014,
+    "last_seen": 1747556632.9890144
+  },
+  "d68595168d1745c1605e92c955ee2d23": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "2",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.9936845,
+    "last_seen": 1747556632.9936845
+  },
+  "a8a05d4759860882b53ae26c2e1ec0db": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "3",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556632.9973068,
+    "last_seen": 1747556632.9973068
+  },
+  "5ca6d2cba710a61a72a8564e09179148": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "i",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 3,
+    "confidence": 0.5,
+    "created": 1747556633.0009832,
+    "last_seen": 1747556633.0048475
+  },
+  "5e842e1dfe8f3eaebdb7828278420d28": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "temp",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.005265,
+    "last_seen": 1747556633.0052652
+  },
+  "23fb4f980e16f185f83213e3ce2e75d2": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "numbers",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0105119,
+    "last_seen": 1747556633.010512
+  },
+  "360b12e8d2654880bafc68976095f136": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "fib_sequence",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0149417,
+    "last_seen": 1747556633.014942
+  },
+  "add257c4768aee0fe33df67ceea0018d": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "unsorted",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0186539,
+    "last_seen": 1747556633.0186539
+  },
+  "d7eb52bac58a167b4dd829fcb6a8f1df": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "sorted",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0223186,
+    "last_seen": 1747556633.0223186
+  },
+  "33112bc22dfea8ff21f90e39c868a994": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "current < min_val",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0272305,
+    "last_seen": 1747556633.0272307
+  },
+  "aeacee30033e8292a3c07cbc95a57d30": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "current > max_val",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0315218,
+    "last_seen": 1747556633.031522
+  },
+  "963135ef64dec845b4ada2938f8b89ed": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n <= 0",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0357404,
+    "last_seen": 1747556633.0357404
+  },
+  "ffdcbab3709c4231a34ce817af3f66c0": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n == 1",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.041753,
+    "last_seen": 1747556633.041753
+  },
+  "c84dd9b63826e84ce4100a663f1c300d": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n == 2",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0473118,
+    "last_seen": 1747556633.0473118
+  },
+  "d182f4bbfc38fec8dad464a098bbd231": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n <= 1",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0513294,
+    "last_seen": 1747556633.0513294
+  },
+  "9eb482d415808522055fa0df71f6426f": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n <= 3",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.055352,
+    "last_seen": 1747556633.0553522
+  },
+  "0a4ab3b2e6076343cde5f013203bdfd5": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n % 2 == 0 or n % 3 == 0",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.059985,
+    "last_seen": 1747556633.0599852
+  },
+  "32d2fbb0a9304ba24c66ac5ec9e48304": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n % i == 0 or n % (i + 2) == 0",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0646398,
+    "last_seen": 1747556633.06464
+  },
+  "b35118d8f67f1d398ca7f77972408b53": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "arr[j] > arr[j + 1]",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.068863,
+    "last_seen": 1747556633.0688632
+  },
+  "d3588b92f92f7b160d28d8e1f8af6ca3": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "is_prime(num)",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0727262,
+    "last_seen": 1747556633.0727262
+  },
+  "c979e310f389a6dff459c9c8c8356fb4": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "loops",
+      "value": "i",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 3,
+    "confidence": 0.5,
+    "created": 1747556633.077495,
+    "last_seen": 1747556633.0817778
+  },
+  "fc68440976eb55d612e2098e595cab5b": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "loops",
+      "value": "j",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0818946,
+    "last_seen": 1747556633.0818946
+  },
+  "0f886bbad097e178c61fd84cca25f8af": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "loops",
+      "value": "num",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0862603,
+    "last_seen": 1747556633.0862603
+  },
+  "3d6c0a00f9d26b6c70f04c67325689b1": {
+    "type": "code_sample",
+    "data": {
+      "code": "// Advanced GZ Programming Patterns\n// This file demonstrates advanced programming patterns in GZ\n\n// Advanced function with multiple parameters and return value\nsimula calculate_statistics numbers\n    // Variable declarations\n    count = len(numbers)\n    sum = 0\n    min_val = numbers[0]\n    max_val = numbers[0]\n    \n    // Calculate sum, min, and max\n    para i 0 count - 1\n        current = numbers[i]\n        sum = sum + current\n        \n        kung current < min_val\n            min_val = current\n        \n        kung current > max_val\n            max_val = current\n    \n    // Calculate average\n    average = sum / count\n    \n    // Create and return statistics object\n    stats = {\n        \"count\": count,\n        \"sum\": sum,\n        \"average\": average,\n        \"min\": min_val,\n        \"max\": max_val,\n        \"range\": max_val - min_val\n    }\n    \n    balik stats\n\n// Function to generate Fibonacci sequence\nsimula fibonacci n\n    // Handle edge cases\n    kung n <= 0\n        balik []\n    kung n == 1\n        balik [0]\n    kung n == 2\n        balik [0, 1]\n    \n    // Initialize sequence with first two numbers\n    sequence = [0, 1]\n    \n    // Generate remaining numbers\n    para i 2 n - 1\n        next_number = sequence[i-1] + sequence[i-2]\n        sequence.append(next_number)\n    \n    balik sequence\n\n// Function to check if a number is prime\nsimula is_prime n\n    // Handle edge cases\n    kung n <= 1\n        balik mali\n    kung n <= 3\n        balik tama\n    kung n % 2 == 0 or n % 3 == 0\n        balik mali\n    \n    // Check for divisibility by numbers of form 6k \u00c2\u00b1 1\n    i = 5\n    habang i * i <= n\n        kung n % i == 0 or n % (i + 2) == 0\n            balik mali\n        i = i + 6\n    \n    balik tama\n\n// Function to sort an array using bubble sort\nsimula bubble_sort arr\n    n = len(arr)\n    \n    // Traverse through all array elements\n    para i 0 n - 1\n        // Last i elements are already in place\n        para j 0 n - i - 1\n            // Swap if current element is greater than next element\n            kung arr[j] > arr[j + 1]\n                temp = arr[j]\n                arr[j] = arr[j + 1]\n                arr[j + 1] = temp\n    \n    balik arr\n\n// Main function to demonstrate the advanced patterns\nsimula main\n    // Test calculate_statistics function\n    numbers = [23, 45, 12, 67, 89, 34, 56]\n    sulat \"Statistics for\", numbers\n    stats = calculate_statistics(numbers)\n    sulat \"Count:\", stats[\"count\"]\n    sulat \"Sum:\", stats[\"sum\"]\n    sulat \"Average:\", stats[\"average\"]\n    sulat \"Min:\", stats[\"min\"]\n    sulat \"Max:\", stats[\"max\"]\n    sulat \"Range:\", stats[\"range\"]\n    \n    // Test fibonacci function\n    n = 10\n    sulat \"\\nFibonacci sequence of length\", n\n    fib_sequence = fibonacci(n)\n    sulat fib_sequence\n    \n    // Test is_prime function\n    sulat \"\\nChecking prime numbers:\"\n    para num 10 20\n        kung is_prime(num)\n            sulat num, \"is prime\"\n        kundi\n            sulat num, \"is not prime\"\n    \n    // Test bubble_sort function\n    unsorted = [64, 34, 25, 12, 22, 11, 90]\n    sulat \"\\nUnsorted array:\", unsorted\n    sorted = bubble_sort(unsorted)\n    sulat \"Sorted array:\", sorted\n    \n    balik 0\n",
+      "source": "examples/advanced_patterns.gz",
+      "timestamp": 1747556633.0908012
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747556633.0908728,
+    "last_seen": 1747556633.090873
   }
 }
