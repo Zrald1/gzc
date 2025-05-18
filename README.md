@@ -19,6 +19,8 @@ GZ is a Filipino-inspired programming language designed to outperform C in speed
 - **Feedback Loop**: Continuously refines understanding based on execution results
 - **Transfer Learning**: Applies knowledge from one task to different contexts
 - **Progressive Optimization**: Optimization levels evolve as knowledge grows
+- **GitHub Auto-Updates**: Automatically updates the GitHub repository with new learnings
+- **Collective Intelligence**: Learns from all users and shares knowledge with everyone
 
 ### UI Design Capabilities
 
@@ -118,13 +120,13 @@ simula main
     y = 20
     name = "Juan"
     is_active = tama  // Boolean true
-    
+
     // Print variables
     sulat "x =", x
     sulat "y =", y
     sulat "name =", name
     sulat "is_active =", is_active
-    
+
     balik 0
 ```
 
@@ -134,23 +136,23 @@ simula main
 simula main
     // If statement
     x = 10
-    
+
     kung x > 5
         sulat "x is greater than 5"
     kundi
         sulat "x is not greater than 5"
-    
+
     // For loop
     sulat "Counting from 1 to 5:"
     para i 1 5
         sulat i
-    
+
     // While loop
     j = 0
     habang j < 5
         sulat "j =", j
         j = j + 1
-    
+
     balik 0
 ```
 
@@ -207,10 +209,10 @@ ui_event main_events {
 simula main
     // Initialize UI
     init_ui()
-    
+
     // Show main window
     show_window(main_window)
-    
+
     balik 0
 
 // Event handler
@@ -245,6 +247,23 @@ The GZ compiler can automatically optimize code for better performance:
 ```bash
 gzc program.gz -O3 -o optimized_program
 ```
+
+### Self-Improvement and GitHub Auto-Updates
+
+The GZ compiler learns from every interaction and continuously improves itself. It automatically updates the GitHub repository with new learnings, making them available to all users:
+
+```bash
+# Force an update to GitHub with new learnings
+gzc --force-update
+
+# View learning statistics
+gzc --ai-stats
+
+# Disable auto-updates (not recommended)
+gzc --no-auto-update
+```
+
+When the GZ compiler learns enough new patterns, optimizations, or corrections, it will automatically update the GitHub repository, ensuring that all users benefit from the collective intelligence of the community.
 
 ## Contributing
 

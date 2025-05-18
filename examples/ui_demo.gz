@@ -1,0 +1,98 @@
+// GZ UI Demo
+// This program demonstrates the UI capabilities of the GZ programming language.
+
+// Define UI elements
+ui_element main_window {
+    type: window;
+    title: "GZ UI Demo";
+    width: 800;
+    height: 600;
+}
+
+ui_element hello_button {
+    type: button;
+    text: "Say Hello";
+    width: 100;
+    height: 30;
+}
+
+ui_element name_input {
+    type: textbox;
+    placeholder: "Enter your name";
+    width: 200;
+    height: 30;
+}
+
+ui_element output_label {
+    type: label;
+    text: "Output will appear here";
+    width: 400;
+    height: 30;
+}
+
+// Define layout
+ui_layout main_layout {
+    main_window -> name_input;
+    main_window -> hello_button;
+    main_window -> output_label;
+    
+    name_input @ (center, top + 100);
+    hello_button @ (center, below name_input + 20);
+    output_label @ (center, below hello_button + 20);
+}
+
+// Define style
+ui_style button_style {
+    target: hello_button;
+    background-color: #3498db;
+    text-color: white;
+    font-size: 14;
+    border-radius: 5;
+}
+
+ui_style input_style {
+    target: name_input;
+    border-color: #3498db;
+    border-width: 1;
+    font-size: 14;
+    padding: 5;
+}
+
+ui_style label_style {
+    target: output_label;
+    text-color: #2c3e50;
+    font-size: 16;
+    font-weight: bold;
+}
+
+// Define events
+ui_event main_events {
+    hello_button onClick: say_hello;
+}
+
+// Main function
+simula main
+    // Initialize UI
+    init_ui()
+    
+    // Show main window
+    show_window(main_window)
+    
+    // Start UI event loop
+    ui_event_loop()
+    
+    balik 0
+
+// Event handler
+simula say_hello
+    // Get name from input
+    name = get_text(name_input)
+    
+    // Check if name is empty
+    kung name == ""
+        name = "World"
+    
+    // Set output label text
+    set_text(output_label, "Hello, " + name + "!")
+    
+    balik tama
