@@ -259,11 +259,34 @@ gzc --force-update
 # View learning statistics
 gzc --ai-stats
 
+# View AI evolution statistics
+gzc --ai-evolution
+
 # Disable auto-updates (not recommended)
 gzc --no-auto-update
 ```
 
 When the GZ compiler learns enough new patterns, optimizations, or corrections, it will automatically update the GitHub repository, ensuring that all users benefit from the collective intelligence of the community.
+
+### Advanced AI Capabilities
+
+The GZ compiler provides advanced AI capabilities for learning and optimization:
+
+```bash
+# Learn from a code file without compiling it
+gzc --ai-learn examples/advanced_patterns.gz
+
+# Optimize a code file without compiling it
+gzc --ai-optimize examples/needs_optimization.gz -o examples/optimized.gz
+```
+
+These capabilities allow you to:
+
+1. **Learn from Code**: The AI can learn from your code without compiling it, which helps it improve its understanding of GZ syntax and patterns.
+
+2. **Optimize Code**: The AI can optimize your code without compiling it, applying various optimization techniques to make your code more efficient.
+
+3. **Track Evolution**: The AI can show detailed statistics about its evolution, including learning rate, progress in different areas, and evolution history.
 
 ## Contributing
 
