@@ -1,8 +1,8 @@
 # GZ Collective Learning Summary
 
-Last updated: 2025-05-18 21:18:05
+Last updated: 2025-05-18 21:20:25
 
-Total learnings: 90
+Total learnings: 91
 Updates pushed: 0
 
 ## Learning Types
@@ -11,9 +11,24 @@ Updates pushed: 0
 - code_sample: 4
 - optimization_event: 2
 - optimization_rule: 8
-- correction_event: 3
+- correction_event: 4
 
 ## Recent Learnings
+
+### correction_event (2025-05-18)
+Frequency: 1, Confidence: 0.50
+
+```
+{
+  "original_code": "// Run Evolving AI\n// This script runs the GZ Evolving AI system\n\n// Import the evolving AI\ninclude \"src/ai/gz_evolving_ai.gz\"\n\n// Main function\nsimula main\n    // Print welcome message\n    print(\"=================================================\")\n    print(\"             GZ Evolving AI System               \")\n    print(\"=================================================\")\n    print(\"This AI can think autonomously, learn, and evolve\")\n    print(\"over time. It will show its thinking process and\")\n    print(\"can ask questions when uncertain.\")\n    print(\"\")\n    print(\"Commands:\")\n    print(\"  exit, quit - Exit the program\")\n    print(\"  save - Save the AI's current state\")\n    print(\"  autonomous - Toggle autonomous mode\")\n    print(\"  thinking - Toggle showing thinking process\")\n    print(\"=================================================\")\n    print(\"\")\n    \n    // Create the AI\n    ai = new EvolvingAI()\n    \n    // Flag to show thinking process\n    show_thinking = mali\n    \n    // Main interaction loop\n    habang tama\n        // Get user input\n        print(\"> \", end=\"\")\n        user_input = input()\n        \n        // Check for special commands\n        kung user_input == \"exit\" or user_input == \"quit\"\n            break\n        kungdi user_input == \"save\"\n            ai.save()\n            print(\"AI state saved.\")\n            continue\n        kungdi user_input == \"autonomous\"\n            ai.toggle_autonomous_mode()\n            kung ai.autonomous_mode\n                ai.run_autonomous()\n            continue\n        kungdi user_input == \"thinking\"\n            show_thinking = not show_thinking\n            print(\"Showing thinking process: \" + (show_thinking ? \"Enabled\" : \"Disabled\"))\n            continue\n        \n        // Process normal input\n        kung show_thinking\n            print(\"\\nThinking process:\")\n            print(\"-----------------\")\n            \n            // Get initial thoughts\n            initial_thoughts = ai.thought_processor.process_initial(user_input)\n            print(\"Initial understanding: \" + initial_thoughts[\"parsed_intent\"][\"type\"])\n            print(\"Initial concepts: \" + to_string(initial_thoughts[\"initial_concepts\"]))\n            \n            // Show recursive thinking\n            para depth 1 to ai.thinking_depth\n                print(\"\\nThinking depth \" + to_string(depth) + \":\")\n                \n                // Get thoughts at this depth\n                thoughts = ai.recursive_thinking(initial_thoughts, depth)\n                \n                // Show confidence\n                print(\"Confidence: \" + to_string(thoughts[\"meta\"][\"confidence\"]))\n                \n                // Show key insights if available\n                kung \"synthesis\" in thoughts and \"key_insights\" in thoughts[\"synthesis\"]\n                    print(\"Key insights: \" + to_string(thoughts[\"synthesis\"][\"key_insights\"]))\n                \n                // Show uncertainty areas\n                kung \"meta\" in thoughts and \"uncertainty_areas\" in thoughts[\"meta\"]\n                    print(\"Uncertainty areas: \" + to_string(thoughts[\"meta\"][\"uncertainty_areas\"]))\n            \n            print(\"\\nGenerating response...\")\n            print(\"-----------------\\n\")\n        \n        // Get response\n        response = ai.think(user_input)\n        \n        // Display response\n        print(\"AI: \" + response)\n        print(\"\")\n    \n    // Save before exiting\n    ai.save()\n    print(\"Goodbye!\")\n    \n    balik 0\n",
+  "corrected_code": "// Run Evolving AI\n// This script runs the GZ Evolving AI system\n\n// Import the evolving AI\ninclude \"src/ai/gz_evolving_ai.gz\"\n\n// Main function\nsimula main\n    // Print welcome message\n    print \"=================================================\"\n    print \"             GZ Evolving AI System               \"\n    print \"=================================================\"\n    print \"This AI can think autonomously, learn, and evolve\"\n    print \"over time. It will show its thinking process and\"\n    print \"can ask questions when uncertain.\"\n    print \"\"\n    print \"Commands:\"\n    print \"  exit, quit - Exit the program\"\n    print \"  save - Save the AI's current state\"\n    print \"  autonomous - Toggle autonomous mode\"\n    print \"  thinking - Toggle showing thinking process\"\n    print \"=================================================\"\n    print \"\"\n    \n    // Create the AI\n    ai = new EvolvingAI \n    \n    // Flag to show thinking process\n    show_thinking = mali\n    \n    // Main interaction loop\n    habang tama\n        // Get user input\n        print \"> \", end=\"\"\n        user_input = input \n        \n        // Check for special commands\n        kung user_input == \"exit\" or user_input == \"quit\"\n            break\n        kungdi user_input == \"save\"\n            ai.save \n            print \"AI state saved.\"\n            continue\n        kungdi user_input == \"autonomous\"\n            ai.toggle_autonomous_mode \n            kung ai.autonomous_mode\n                ai.run_autonomous \n            continue\n        kungdi user_input == \"thinking\"\n            show_thinking = not show_thinking\n            print \"Showing thinking process: \" + (show_thinking ? \"Enabled\" : \"Disabled\")\n            continue\n        \n        // Process normal input\n        kung show_thinking\n            print \"\\nThinking process:\"\n            print \"-----------------\"\n            \n            // Get initial thoughts\n            initial_thoughts = ai.thought_processor.process_initial user_input\n            print \"Initial understanding: \" + initial_thoughts[\"parsed_intent\"][\"type\"]\n            print \"Initial concepts: \" + to_string(initial_thoughts[\"initial_concepts\"])\n            \n            // Show recursive thinking\n            para depth 1 to ai.thinking_depth\n                print \"\\nThinking depth \" + to_string(depth + \":\")\n                \n                // Get thoughts at this depth\n                thoughts = ai.recursive_thinking initial_thoughts, depth\n                \n                // Show confidence\n                print \"Confidence: \" + to_string(thoughts[\"meta\"][\"confidence\"])\n                \n                // Show key insights if available\n                kung \"synthesis\" in thoughts and \"key_insights\" in thoughts[\"synthesis\"]\n                    print \"Key insights: \" + to_string(thoughts[\"synthesis\"][\"key_insights\"])\n                \n                // Show uncertainty areas\n                kung \"meta\" in thoughts and \"uncertainty_areas\" in thoughts[\"meta\"]\n                    print \"Uncertainty areas: \" + to_string(thoughts[\"meta\"][\"uncertainty_areas\"])\n            \n            print \"\\nGenerating response...\"\n            print \"-----------------\\n\"\n        \n        // Get response\n        response = ai.think user_input\n        \n        // Display response\n        print \"AI: \" + response\n        print \"\"\n    \n    // Save before exiting\n    ai.save \n    print \"Goodbye!\"\n    \n    balik 0\n",
+  "error_message": null,
+  "applied_rules": [
+    "function_call_with_parentheses"
+  ],
+  "timestamp": 1747574420.3499167
+}
+```
 
 ### correction_event (2025-05-18)
 Frequency: 1, Confidence: 0.50
@@ -113,17 +128,6 @@ Frequency: 1, Confidence: 0.50
 ```
 {
   "type": "conditionals",
-  "value": "new_operand",
-  "source": "examples/ui_example.gz"
-}
-```
-
-### syntax_pattern (2025-05-18)
-Frequency: 5, Confidence: 0.50
-
-```
-{
-  "type": "variable_assignments",
   "value": "new_operand",
   "source": "examples/ui_example.gz"
 }
