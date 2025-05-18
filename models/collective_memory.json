@@ -526,5 +526,114 @@
     "confidence": 0.5,
     "created": 1747555885.01604,
     "last_seen": 1747555885.01604
+  },
+  "f859602d67e475c9b6f96ec0fd335269": {
+    "type": "optimization_event",
+    "data": {
+      "original_code": "// GZ Program that needs optimization\n// This program demonstrates various patterns that can be optimized\n\nsimula main\n    // Inefficient variable assignments\n    x = 10\n    x = x + 1\n    y = 20\n    y = y - 5\n    z = 30\n    z = z * 2\n    \n    // Inefficient boolean comparisons\n    flag1 = tama\n    flag2 = mali\n    \n    kung flag1 == tama\n        sulat \"Flag1 is true\"\n    \n    kung flag2 == mali\n        sulat \"Flag2 is false\"\n    \n    // Inefficient loop syntax\n    para i = 1 hanggang 5\n        sulat \"Iteration\", i\n    \n    // Inefficient string concatenation\n    message = \"Hello\"\n    message = message + \", \"\n    message = message + \"World\"\n    message = message + \"!\"\n    sulat message\n    \n    // Inefficient array operations\n    numbers = []\n    numbers.append(1)\n    numbers.append(2)\n    numbers.append(3)\n    numbers.append(4)\n    numbers.append(5)\n    \n    sum = 0\n    para i = 0 hanggang len(numbers) - 1\n        sum = sum + numbers[i]\n    \n    sulat \"Sum:\", sum\n    \n    // Inefficient conditional checks\n    value = 42\n    \n    kung value > 0\n        kung value < 100\n            sulat \"Value is between 0 and 100\"\n    \n    // Inefficient function calls\n    result1 = calculate(10)\n    result2 = calculate(20)\n    result3 = calculate(30)\n    \n    sulat \"Results:\", result1, result2, result3\n    \n    balik 0\n\n// Inefficient function implementation\nsimula calculate input\n    // Unnecessary temporary variables\n    temp1 = input * 2\n    temp2 = temp1 + 5\n    temp3 = temp2 / 3\n    \n    // Inefficient loop\n    para i = 0 hanggang 3\n        temp3 = temp3 + i\n    \n    balik temp3\n",
+      "optimized_code": "// GZ Program that needs optimization\n// This program demonstrates various patterns that can be optimized\n\nsimula main\n    // Inefficient variable assignments\n    x = 10\n    x += 1\n    y = 20\n    y = y - 5\n    z = 30\n    z = z * 2\n    \n    // Inefficient boolean comparisons\n    flag1 = tama\n    flag2 = mali\n    \n    kung flag1\n        sulat \"Flag1 is true\"\n    \n    kung flag2 == mali\n        sulat \"Flag2 is false\"\n    \n    // Inefficient loop syntax\n    para i 1 5\n        sulat \"Iteration\", i\n    \n    // Inefficient string concatenation\n    message = \"Hello\"\n    message = message + \", \"\n    message = message + \"World\"\n    message = message + \"!\"\n    sulat message\n    \n    // Inefficient array operations\n    numbers = []\n    numbers.append(1)\n    numbers.append(2)\n    numbers.append(3)\n    numbers.append(4)\n    numbers.append(5)\n    \n    sum = 0\n    para i = 0 hanggang len(numbers) - 1\n        sum = sum + numbers[i]\n    \n    sulat \"Sum:\", sum\n    \n    // Inefficient conditional checks\n    value = 42\n    \n    kung value > 0\n        kung value < 100\n            sulat \"Value is between 0 and 100\"\n    \n    // Inefficient function calls\n    result1 = calculate(10)\n    result2 = calculate(20)\n    result3 = calculate(30)\n    \n    sulat \"Results:\", result1, result2, result3\n    \n    balik 0\n\n// Inefficient function implementation\nsimula calculate input\n    // Unnecessary temporary variables\n    temp1 = input * 2\n    temp2 = temp1 + 5\n    temp3 = temp2 / 3\n    \n    // Inefficient loop\n    para i 0 3\n        temp3 = temp3 + i\n    \n    balik temp3\n",
+      "applied_techniques": [
+        "compound_assignment",
+        "boolean_simplification",
+        "loop_range"
+      ],
+      "optimization_level": 1,
+      "timestamp": 1747555901.5274158
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.5274916,
+    "last_seen": 1747555901.5274916
+  },
+  "269c6a3ef8039716156a53e3adaebf21": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "compound_+",
+      "pattern": "(x)\\s*=\\s*\\1\\s*\\+\\s*(1)",
+      "replacement": "\\1 += \\2",
+      "explanation": "Use compound assignment for + operation"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.530163,
+    "last_seen": 1747555901.5301633
+  },
+  "5d81db3597d12d3ccb1916a9be78f039": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "compound_-",
+      "pattern": "(y)\\s*=\\s*\\1\\s*\\-\\s*(5)",
+      "replacement": "\\1 -= \\2",
+      "explanation": "Use compound assignment for - operation"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.5331511,
+    "last_seen": 1747555901.5331511
+  },
+  "cd29f96dd57e252c18713e7e4e0cf962": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "compound_*",
+      "pattern": "(z)\\s*=\\s*\\1\\s*\\*\\s*(2)",
+      "replacement": "\\1 *= \\2",
+      "explanation": "Use compound assignment for * operation"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.5355988,
+    "last_seen": 1747555901.535599
+  },
+  "60097d097e8ce095e42f5698bf484e93": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "compound_+",
+      "pattern": "(sum)\\s*=\\s*\\1\\s*\\+\\s*(numbers)",
+      "replacement": "\\1 += \\2",
+      "explanation": "Use compound assignment for + operation"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.539203,
+    "last_seen": 1747555901.539203
+  },
+  "6fda1ea138d276a3621c22730a034b4e": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "compound_+",
+      "pattern": "(temp3)\\s*=\\s*\\1\\s*\\+\\s*(i)",
+      "replacement": "\\1 += \\2",
+      "explanation": "Use compound assignment for + operation"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.5420897,
+    "last_seen": 1747555901.5420897
+  },
+  "0b96a9b32cf6106b30ff44dc5b7cfead": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "simplify_boolean_comparison",
+      "pattern": "kung\\s+(\\w+)\\s*==\\s*tama",
+      "replacement": "kung \\1",
+      "explanation": "Simplify boolean comparison with 'tama'"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.54515,
+    "last_seen": 1747555901.5451503
+  },
+  "c792986c2276868f9e935a7954aebc1f": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "simplify_loop",
+      "pattern": "para\\s+(\\w+)\\s*=\\s*(\\d+)\\s*hanggang\\s*(\\d+)",
+      "replacement": "para \\1 \\2 \\3",
+      "explanation": "Simplify loop syntax"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.5482538,
+    "last_seen": 1747555901.5482538
   }
 }
