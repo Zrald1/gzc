@@ -1,0 +1,41 @@
+// GZ AI Demo
+// This program demonstrates the AI capabilities of the GZ programming language.
+
+// Function with incorrect syntax (will be auto-corrected)
+simula factorial(n) {
+    kung (n <= 1) {
+        balik 1;
+    } kundi {
+        balik n * factorial(n - 1);
+    }
+}
+
+// Main function with various errors (will be auto-corrected)
+simula main() {
+    // Print statement with parentheses (will be auto-corrected)
+    sulat("GZ AI Capabilities Demo");
+    sulat("----------------------");
+    
+    // Variable assignments with semicolons (will be auto-corrected)
+    max_n = 5;
+    
+    // Loop with C-style syntax (will be auto-corrected)
+    para (i = 1; i <= max_n; i++) {
+        // Function call with incorrect syntax (will be auto-corrected)
+        result = factorial(i);
+        sulat(i, "! =", result);
+    }
+    
+    // Code that can be optimized (will be auto-optimized)
+    x = 10;
+    x = x + 1;
+    
+    // Boolean check that can be simplified (will be auto-optimized)
+    flag = tama;
+    kung (flag == tama) {
+        sulat("Flag is true");
+    }
+    
+    // Return statement with semicolon (will be auto-corrected)
+    balik 0;
+}

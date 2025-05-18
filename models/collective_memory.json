@@ -1,0 +1,86 @@
+{
+  "correction_rule_1": {
+    "type": "correction_rule",
+    "data": {
+      "pattern": "simula\\s+(\\w+)\\s*\\(",
+      "replacement": "simula \\1 ",
+      "explanation": "In GZ, function declarations don't use parentheses"
+    },
+    "frequency": 10,
+    "confidence": 0.95,
+    "created": 1716133200,
+    "last_seen": 1716133200
+  },
+  "correction_rule_2": {
+    "type": "correction_rule",
+    "data": {
+      "pattern": "sulat\\s*\\(",
+      "replacement": "sulat ",
+      "explanation": "In GZ, function calls don't use parentheses"
+    },
+    "frequency": 8,
+    "confidence": 0.9,
+    "created": 1716133200,
+    "last_seen": 1716133200
+  },
+  "correction_rule_3": {
+    "type": "correction_rule",
+    "data": {
+      "pattern": ";",
+      "replacement": "",
+      "explanation": "In GZ, statements don't end with semicolons"
+    },
+    "frequency": 15,
+    "confidence": 0.98,
+    "created": 1716133200,
+    "last_seen": 1716133200
+  },
+  "optimization_rule_1": {
+    "type": "optimization_rule",
+    "data": {
+      "pattern": "(\\w+)\\s*=\\s*\\1\\s*\\+\\s*([^;]+)",
+      "replacement": "\\1 += \\2",
+      "explanation": "Use compound assignment for increment"
+    },
+    "frequency": 5,
+    "confidence": 0.85,
+    "created": 1716133200,
+    "last_seen": 1716133200
+  },
+  "optimization_rule_2": {
+    "type": "optimization_rule",
+    "data": {
+      "pattern": "kung\\s+(\\w+)\\s*==\\s*tama",
+      "replacement": "kung \\1",
+      "explanation": "Simplify boolean comparison"
+    },
+    "frequency": 3,
+    "confidence": 0.8,
+    "created": 1716133200,
+    "last_seen": 1716133200
+  },
+  "code_template_1": {
+    "type": "code_template",
+    "data": {
+      "name": "hello_world",
+      "code": "simula main\n    sulat \"Hello, World!\"\n    balik 0\n",
+      "description": "A simple hello world program"
+    },
+    "frequency": 20,
+    "confidence": 0.99,
+    "created": 1716133200,
+    "last_seen": 1716133200
+  },
+  "code_template_2": {
+    "type": "code_template",
+    "data": {
+      "name": "factorial",
+      "code": "simula factorial n\n    kung n <= 1\n        balik 1\n    balik n * factorial(n-1)\n\nsimula main\n    para i 1 5\n        sulat i, \"! =\", factorial(i)\n    balik 0\n",
+      "description": "A program that calculates factorials"
+    },
+    "frequency": 7,
+    "confidence": 0.9,
+    "created": 1716133200,
+    "last_seen": 1716133200
+  }
+}

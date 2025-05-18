@@ -1,0 +1,406 @@
+// GZ UI Example
+// This example demonstrates the UI capabilities of the GZ programming language
+
+// Define UI elements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Define layout
+
+
+// Define style
+
+
+
+
+
+
+// Define events
+
+
+// Global variables
+current_value = 0
+display_value = "0"
+operator = ""
+new_operand = tama
+
+// Main function
+simula main
+    // Initialize UI
+    init_ui()
+    
+    // Show main window
+    show_window(main_window)
+    
+    // Start event loop
+    start_event_loop()
+    
+    balik 0
+
+// Function to append a digit to the display
+simula function_append_digit digit
+    kung new_operand
+        display_value = digit
+        new_operand = mali
+    kundi
+        kung display_value == "0"
+            display_value = digit
+        kundi
+            display_value = display_value + digit
+    
+    set_text(display, display_value)
+    balik tama
+
+// Function to set the operator
+simula function_set_operator op
+    current_value = parse_number(display_value)
+    operator = op
+    new_operand = tama
+    balik tama
+
+// Function to calculate the result
+simula function_calculate
+    second_value = parse_number(display_value)
+    result = 0
+    
+    kung operator == "+"
+        result = current_value + second_value
+    kundi kung operator == "-"
+        result = current_value - second_value
+    kundi kung operator == "*"
+        result = current_value * second_value
+    kundi kung operator == "/"
+        kung second_value == 0
+            set_text(display, "Error")
+            balik tama
+        result = current_value / second_value
+    
+    display_value = to_string(result)
+    set_text(display, display_value)
+    
+    current_value = result
+    new_operand = tama
+    
+    balik tama
+
+// Function to clear the calculator
+simula function_clear
+    current_value = 0
+    display_value = "0"
+    operator = ""
+    new_operand = tama
+    
+    set_text(display, display_value)
+    balik tama
+
+// Helper function to parse a number from a string
+simula parse_number str
+    balik to_number(str)
+
+// Helper function to convert a number to a string
+simula to_string num
+    balik num
+
+
+// Generated UI code
+simula init_ui
+    // Create main_window
+    main_window = create_ui_element("window")
+    set_property(main_window, "title", ""GZ Calculator"")
+    set_property(main_window, "width", "300")
+    set_property(main_window, "height", "400")
+    set_property(main_window, "background", "#f0f0f0")
+    // Create display
+    display = create_ui_element("textbox")
+    set_property(display, "width", "280")
+    set_property(display, "height", "50")
+    set_property(display, "readonly", "tama")
+    set_property(display, "text", ""0"")
+    set_property(display, "font-size", "24")
+    // Create button_1
+    button_1 = create_ui_element("button")
+    set_property(button_1, "text", ""1"")
+    set_property(button_1, "width", "60")
+    set_property(button_1, "height", "60")
+    // Create button_2
+    button_2 = create_ui_element("button")
+    set_property(button_2, "text", ""2"")
+    set_property(button_2, "width", "60")
+    set_property(button_2, "height", "60")
+    // Create button_3
+    button_3 = create_ui_element("button")
+    set_property(button_3, "text", ""3"")
+    set_property(button_3, "width", "60")
+    set_property(button_3, "height", "60")
+    // Create button_4
+    button_4 = create_ui_element("button")
+    set_property(button_4, "text", ""4"")
+    set_property(button_4, "width", "60")
+    set_property(button_4, "height", "60")
+    // Create button_5
+    button_5 = create_ui_element("button")
+    set_property(button_5, "text", ""5"")
+    set_property(button_5, "width", "60")
+    set_property(button_5, "height", "60")
+    // Create button_6
+    button_6 = create_ui_element("button")
+    set_property(button_6, "text", ""6"")
+    set_property(button_6, "width", "60")
+    set_property(button_6, "height", "60")
+    // Create button_7
+    button_7 = create_ui_element("button")
+    set_property(button_7, "text", ""7"")
+    set_property(button_7, "width", "60")
+    set_property(button_7, "height", "60")
+    // Create button_8
+    button_8 = create_ui_element("button")
+    set_property(button_8, "text", ""8"")
+    set_property(button_8, "width", "60")
+    set_property(button_8, "height", "60")
+    // Create button_9
+    button_9 = create_ui_element("button")
+    set_property(button_9, "text", ""9"")
+    set_property(button_9, "width", "60")
+    set_property(button_9, "height", "60")
+    // Create button_0
+    button_0 = create_ui_element("button")
+    set_property(button_0, "text", ""0"")
+    set_property(button_0, "width", "60")
+    set_property(button_0, "height", "60")
+    // Create button_plus
+    button_plus = create_ui_element("button")
+    set_property(button_plus, "text", ""+"")
+    set_property(button_plus, "width", "60")
+    set_property(button_plus, "height", "60")
+    // Create button_minus
+    button_minus = create_ui_element("button")
+    set_property(button_minus, "text", ""-"")
+    set_property(button_minus, "width", "60")
+    set_property(button_minus, "height", "60")
+    // Create button_multiply
+    button_multiply = create_ui_element("button")
+    set_property(button_multiply, "text", ""*"")
+    set_property(button_multiply, "width", "60")
+    set_property(button_multiply, "height", "60")
+    // Create button_divide
+    button_divide = create_ui_element("button")
+    set_property(button_divide, "text", ""/"")
+    set_property(button_divide, "width", "60")
+    set_property(button_divide, "height", "60")
+    // Create button_equals
+    button_equals = create_ui_element("button")
+    set_property(button_equals, "text", ""="")
+    set_property(button_equals, "width", "60")
+    set_property(button_equals, "height", "60")
+    // Create button_clear
+    button_clear = create_ui_element("button")
+    set_property(button_clear, "text", ""C"")
+    set_property(button_clear, "width", "60")
+    set_property(button_clear, "height", "60")
+    // Apply layout calculator_layout
+    add_child(main_window, display)
+    add_child(main_window, button_1)
+    add_child(main_window, button_2)
+    add_child(main_window, button_3)
+    add_child(main_window, button_4)
+    add_child(main_window, button_5)
+    add_child(main_window, button_6)
+    add_child(main_window, button_7)
+    add_child(main_window, button_8)
+    add_child(main_window, button_9)
+    add_child(main_window, button_0)
+    add_child(main_window, button_plus)
+    add_child(main_window, button_minus)
+    add_child(main_window, button_multiply)
+    add_child(main_window, button_divide)
+    add_child(main_window, button_equals)
+    add_child(main_window, button_clear)
+    set_position(display, "top:10,left:10,right:10")
+    set_position(button_7, "top:70,left:10")
+    set_position(button_8, "top:70,left:80")
+    set_position(button_9, "top:70,left:150")
+    set_position(button_divide, "top:70,left:220")
+    set_position(button_4, "top:140,left:10")
+    set_position(button_5, "top:140,left:80")
+    set_position(button_6, "top:140,left:150")
+    set_position(button_multiply, "top:140,left:220")
+    set_position(button_1, "top:210,left:10")
+    set_position(button_2, "top:210,left:80")
+    set_position(button_3, "top:210,left:150")
+    set_position(button_minus, "top:210,left:220")
+    set_position(button_0, "top:280,left:10")
+    set_position(button_clear, "top:280,left:80")
+    set_position(button_equals, "top:280,left:150")
+    set_position(button_plus, "top:280,left:220")
+    // Apply style calculator_style
+    apply_style(main_window, "calculator_style")
+    apply_style(display, "calculator_style")
+    apply_style(button_1, "calculator_style")
+    apply_style(button_2, "calculator_style")
+    apply_style(button_3, "calculator_style")
+    apply_style(button_4, "calculator_style")
+    apply_style(button_5, "calculator_style")
+    apply_style(button_6, "calculator_style")
+    apply_style(button_7, "calculator_style")
+    apply_style(button_8, "calculator_style")
+    apply_style(button_9, "calculator_style")
+    apply_style(button_0, "calculator_style")
+    apply_style(button_plus, "calculator_style")
+    apply_style(button_minus, "calculator_style")
+    apply_style(button_multiply, "calculator_style")
+    apply_style(button_divide, "calculator_style")
+    apply_style(button_equals, "calculator_style")
+    apply_style(button_clear, "calculator_style")
+    // Apply style button_style
+    apply_style(main_window, "button_style")
+    apply_style(display, "button_style")
+    apply_style(button_1, "button_style")
+    apply_style(button_2, "button_style")
+    apply_style(button_3, "button_style")
+    apply_style(button_4, "button_style")
+    apply_style(button_5, "button_style")
+    apply_style(button_6, "button_style")
+    apply_style(button_7, "button_style")
+    apply_style(button_8, "button_style")
+    apply_style(button_9, "button_style")
+    apply_style(button_0, "button_style")
+    apply_style(button_plus, "button_style")
+    apply_style(button_minus, "button_style")
+    apply_style(button_multiply, "button_style")
+    apply_style(button_divide, "button_style")
+    apply_style(button_equals, "button_style")
+    apply_style(button_clear, "button_style")
+    // Apply style display_style
+    apply_style(main_window, "display_style")
+    apply_style(display, "display_style")
+    apply_style(button_1, "display_style")
+    apply_style(button_2, "display_style")
+    apply_style(button_3, "display_style")
+    apply_style(button_4, "display_style")
+    apply_style(button_5, "display_style")
+    apply_style(button_6, "display_style")
+    apply_style(button_7, "display_style")
+    apply_style(button_8, "display_style")
+    apply_style(button_9, "display_style")
+    apply_style(button_0, "display_style")
+    apply_style(button_plus, "display_style")
+    apply_style(button_minus, "display_style")
+    apply_style(button_multiply, "display_style")
+    apply_style(button_divide, "display_style")
+    apply_style(button_equals, "display_style")
+    apply_style(button_clear, "display_style")
+    // Register events for calculator_events
+    register_event(butt, "on_0 onClick", function_append_digit("0"))
+    register_event(butt, "on_1 onClick", function_append_digit("1"))
+    register_event(butt, "on_2 onClick", function_append_digit("2"))
+    register_event(butt, "on_3 onClick", function_append_digit("3"))
+    register_event(butt, "on_4 onClick", function_append_digit("4"))
+    register_event(butt, "on_5 onClick", function_append_digit("5"))
+    register_event(butt, "on_6 onClick", function_append_digit("6"))
+    register_event(butt, "on_7 onClick", function_append_digit("7"))
+    register_event(butt, "on_8 onClick", function_append_digit("8"))
+    register_event(butt, "on_9 onClick", function_append_digit("9"))
+    register_event(butt, "on_plus onClick", function_set_operator("+"))
+    register_event(butt, "on_minus onClick", function_set_operator("-"))
+    register_event(butt, "on_multiply onClick", function_set_operator("*"))
+    register_event(butt, "on_divide onClick", function_set_operator("/"))
+    register_event(butt, "on_equals onClick", function_calculate)
+    register_event(butt, "on_clear onClick", function_clear)
+    balik tama
+simula function_append_digit("0")
+    // Event handler for butt on_0 onClick
+    sulat "Event on_0 onClick triggered on butt"
+    balik tama
+simula function_append_digit("1")
+    // Event handler for butt on_1 onClick
+    sulat "Event on_1 onClick triggered on butt"
+    balik tama
+simula function_append_digit("2")
+    // Event handler for butt on_2 onClick
+    sulat "Event on_2 onClick triggered on butt"
+    balik tama
+simula function_append_digit("3")
+    // Event handler for butt on_3 onClick
+    sulat "Event on_3 onClick triggered on butt"
+    balik tama
+simula function_append_digit("4")
+    // Event handler for butt on_4 onClick
+    sulat "Event on_4 onClick triggered on butt"
+    balik tama
+simula function_append_digit("5")
+    // Event handler for butt on_5 onClick
+    sulat "Event on_5 onClick triggered on butt"
+    balik tama
+simula function_append_digit("6")
+    // Event handler for butt on_6 onClick
+    sulat "Event on_6 onClick triggered on butt"
+    balik tama
+simula function_append_digit("7")
+    // Event handler for butt on_7 onClick
+    sulat "Event on_7 onClick triggered on butt"
+    balik tama
+simula function_append_digit("8")
+    // Event handler for butt on_8 onClick
+    sulat "Event on_8 onClick triggered on butt"
+    balik tama
+simula function_append_digit("9")
+    // Event handler for butt on_9 onClick
+    sulat "Event on_9 onClick triggered on butt"
+    balik tama
+simula function_set_operator("+")
+    // Event handler for butt on_plus onClick
+    sulat "Event on_plus onClick triggered on butt"
+    balik tama
+simula function_set_operator("-")
+    // Event handler for butt on_minus onClick
+    sulat "Event on_minus onClick triggered on butt"
+    balik tama
+simula function_set_operator("*")
+    // Event handler for butt on_multiply onClick
+    sulat "Event on_multiply onClick triggered on butt"
+    balik tama
+simula function_set_operator("/")
+    // Event handler for butt on_divide onClick
+    sulat "Event on_divide onClick triggered on butt"
+    balik tama
+simula function_calculate
+    // Event handler for butt on_equals onClick
+    sulat "Event on_equals onClick triggered on butt"
+    balik tama
+simula function_clear
+    // Event handler for butt on_clear onClick
+    sulat "Event on_clear onClick triggered on butt"
+    balik tama

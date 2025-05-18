@@ -61,7 +61,7 @@ if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
     echo -e "${YELLOW}Warning: $BIN_DIR is not in your PATH.${NC}"
     echo "Add the following line to your ~/.bashrc or ~/.zshrc file:"
     echo "export PATH=\"\$PATH:$BIN_DIR\""
-    
+
     # Ask if we should add it automatically
     read -p "Would you like to add it automatically? (y/n) " -n 1 -r
     echo
@@ -74,7 +74,7 @@ if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
         else
             SHELL_CONFIG="$HOME/.profile"
         fi
-        
+
         # Add to PATH
         echo "export PATH=\"\$PATH:$BIN_DIR\"" >> "$SHELL_CONFIG"
         echo -e "${GREEN}Added $BIN_DIR to your PATH in $SHELL_CONFIG${NC}"
@@ -82,25 +82,57 @@ if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
     fi
 fi
 
-# Create models directory and README
+# Create models directory and subdirectories
 mkdir -p "$INSTALL_DIR/models"
-cat > "$INSTALL_DIR/models/README.md" << EOF
-# GZ AI Models
+mkdir -p "$INSTALL_DIR/models/backups"
 
-This directory contains the AI models used by the GZ programming language for:
+# Create AI directories
+mkdir -p "$INSTALL_DIR/src/ai"
+
+# Copy AI modules if they exist
+if [ -d "$SCRIPT_DIR/src/ai" ]; then
+    echo -e "${GREEN}Copying AI modules...${NC}"
+    cp -r "$SCRIPT_DIR/src/ai"/* "$INSTALL_DIR/src/ai/"
+fi
+
+# Create models README if it doesn't exist
+if [ ! -f "$INSTALL_DIR/models/README.md" ]; then
+    cat > "$INSTALL_DIR/models/README.md" << EOF
+# GZ AI Models and Collective Memory
+
+This directory contains the AI models and memory files used by the GZ programming language for:
 
 1. Auto-generation of code
 2. Auto-correction of syntax errors
 3. Auto-optimization of code
+4. Self-improvement and learning
+5. GitHub auto-updates
 
-The models will be downloaded automatically when needed.
+The models and memory files enable the GZ compiler to:
+
+- Learn from your code
+- Improve itself over time
+- Share learnings with all users through GitHub auto-updates
+- Provide increasingly powerful AI capabilities
+
+The collective memory is stored in:
+- collective_memory.json: Contains all learnings from the community
+- learning_summary.md: Human-readable summary of learnings
+
+Backups of improved files are stored in the 'backups' directory.
 EOF
+fi
 
 echo -e "${GREEN}Installation complete!${NC}"
 echo
 echo -e "You can now use the ${YELLOW}gzc${NC} command to compile and run GZ programs."
 echo -e "Example: ${YELLOW}gzc examples/hello.gz -r${NC}"
 echo
+echo -e "Try the AI capabilities:"
+echo -e "- Auto-correction: ${YELLOW}gzc examples/ai_demo.gz -r${NC}"
+echo -e "- Code generation: ${YELLOW}gzc -g \"Create a factorial calculator\" -o factorial.gz${NC}"
+echo -e "- Code explanation: ${YELLOW}gzc examples/hello.gz -e${NC}"
+echo
 echo -e "For more information, run: ${YELLOW}gzc --help${NC}"
 echo
-echo -e "${GREEN}Enjoy programming with GZ!${NC}"
+echo -e "${GREEN}Enjoy programming with GZ - the self-evolving programming language!${NC}"
