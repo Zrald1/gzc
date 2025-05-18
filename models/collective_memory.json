@@ -1,1 +1,639 @@
-{}
+{
+  "ae0c9ed0b0cbe81e31c4d940955f42fa": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "calculate_statistics",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9389696,
+    "last_seen": 1747555884.9389699
+  },
+  "a5db5f1a8509456d506ef3e944c271db": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "fibonacci",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9400795,
+    "last_seen": 1747555884.9400797
+  },
+  "e8f8bb11cadc6a03880d8cce476528c6": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "is_prime",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9411292,
+    "last_seen": 1747555884.9411294
+  },
+  "c3aeb6f093a12c29e62e290502f3b63a": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "bubble_sort",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9426975,
+    "last_seen": 1747555884.9426975
+  },
+  "7691e277cb2af5cef658956b8cacb000": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "main",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.943807,
+    "last_seen": 1747555884.943807
+  },
+  "41be9060bd58639b70a3f4ecf08ab167": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "len",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 2,
+    "confidence": 0.5,
+    "created": 1747555884.944892,
+    "last_seen": 1747555884.9472718
+  },
+  "9632b4d2527010f8ccaee82c1a428a34": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "append",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9460254,
+    "last_seen": 1747555884.9460254
+  },
+  "b5994bf9e1c3e9e352de30197c6110ad": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "calculate_statistics",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9474232,
+    "last_seen": 1747555884.9474232
+  },
+  "6c73b4fa974b7c507eb8310b9d5386de": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "fibonacci",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.948439,
+    "last_seen": 1747555884.948439
+  },
+  "261a5b7c69236996ca7db1b0e56a98e8": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "is_prime",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9494202,
+    "last_seen": 1747555884.9494202
+  },
+  "e5526ddc7a40ee8883e1dc479176a668": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_calls",
+      "value": "bubble_sort",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9506884,
+    "last_seen": 1747555884.9506884
+  },
+  "5fb93717ab14a0047b35f33f15815831": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "count",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9518285,
+    "last_seen": 1747555884.9518287
+  },
+  "cb1cb6901537e404a50658d8337d7896": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "sum",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 2,
+    "confidence": 0.5,
+    "created": 1747555884.953461,
+    "last_seen": 1747555884.9597032
+  },
+  "230112c347fa935920207ea9f29ba1df": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "min_val",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 2,
+    "confidence": 0.5,
+    "created": 1747555884.9550743,
+    "last_seen": 1747555884.959869
+  },
+  "e076e4fda806748144d4b5aa295ea3f8": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "max_val",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 2,
+    "confidence": 0.5,
+    "created": 1747555884.956464,
+    "last_seen": 1747555884.960063
+  },
+  "3e94adac32f7995ac3e6960d7ccf32ef": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "current",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9582312,
+    "last_seen": 1747555884.9582312
+  },
+  "feda76f9e638ac7ccdb4f3bd30f79be9": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "average",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.960284,
+    "last_seen": 1747555884.9602842
+  },
+  "06a9acc07dc58a358b2b518171dda7f6": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "stats",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 2,
+    "confidence": 0.5,
+    "created": 1747555884.9616308,
+    "last_seen": 1747555884.9769232
+  },
+  "45ab02c215997067f34a104827ef1012": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "n",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 4,
+    "confidence": 0.5,
+    "created": 1747555884.9628344,
+    "last_seen": 1747555884.9771514
+  },
+  "ee4cd11185b2071397205e5fa5fc8321": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "sequence",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9644775,
+    "last_seen": 1747555884.9644775
+  },
+  "f91774c93b979b5ac39f4c057e5f3e07": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "next_number",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9660113,
+    "last_seen": 1747555884.9660113
+  },
+  "d68595168d1745c1605e92c955ee2d23": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "2",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9677393,
+    "last_seen": 1747555884.9677393
+  },
+  "a8a05d4759860882b53ae26c2e1ec0db": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "3",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9694164,
+    "last_seen": 1747555884.9694164
+  },
+  "5ca6d2cba710a61a72a8564e09179148": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "i",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 3,
+    "confidence": 0.5,
+    "created": 1747555884.9713922,
+    "last_seen": 1747555884.9733067
+  },
+  "5e842e1dfe8f3eaebdb7828278420d28": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "temp",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9735985,
+    "last_seen": 1747555884.9735985
+  },
+  "23fb4f980e16f185f83213e3ce2e75d2": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "numbers",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9753006,
+    "last_seen": 1747555884.9753006
+  },
+  "360b12e8d2654880bafc68976095f136": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "fib_sequence",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.977339,
+    "last_seen": 1747555884.9773395
+  },
+  "add257c4768aee0fe33df67ceea0018d": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "unsorted",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9789982,
+    "last_seen": 1747555884.9789984
+  },
+  "d7eb52bac58a167b4dd829fcb6a8f1df": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "sorted",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9808257,
+    "last_seen": 1747555884.9808257
+  },
+  "33112bc22dfea8ff21f90e39c868a994": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "current < min_val",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9824767,
+    "last_seen": 1747555884.982477
+  },
+  "aeacee30033e8292a3c07cbc95a57d30": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "current > max_val",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9841068,
+    "last_seen": 1747555884.9841068
+  },
+  "963135ef64dec845b4ada2938f8b89ed": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n <= 0",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9858918,
+    "last_seen": 1747555884.985892
+  },
+  "ffdcbab3709c4231a34ce817af3f66c0": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n == 1",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9884386,
+    "last_seen": 1747555884.9884386
+  },
+  "c84dd9b63826e84ce4100a663f1c300d": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n == 2",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9908357,
+    "last_seen": 1747555884.990836
+  },
+  "d182f4bbfc38fec8dad464a098bbd231": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n <= 1",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9927454,
+    "last_seen": 1747555884.9927454
+  },
+  "9eb482d415808522055fa0df71f6426f": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n <= 3",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9944687,
+    "last_seen": 1747555884.9944687
+  },
+  "0a4ab3b2e6076343cde5f013203bdfd5": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n % 2 == 0 or n % 3 == 0",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9967046,
+    "last_seen": 1747555884.9967046
+  },
+  "32d2fbb0a9304ba24c66ac5ec9e48304": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "n % i == 0 or n % (i + 2) == 0",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555884.9989583,
+    "last_seen": 1747555884.9989586
+  },
+  "b35118d8f67f1d398ca7f77972408b53": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "arr[j] > arr[j + 1]",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555885.0017903,
+    "last_seen": 1747555885.0017903
+  },
+  "d3588b92f92f7b160d28d8e1f8af6ca3": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "is_prime(num)",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555885.0053425,
+    "last_seen": 1747555885.0053425
+  },
+  "c979e310f389a6dff459c9c8c8356fb4": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "loops",
+      "value": "i",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 3,
+    "confidence": 0.5,
+    "created": 1747555885.0076377,
+    "last_seen": 1747555885.0102508
+  },
+  "fc68440976eb55d612e2098e595cab5b": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "loops",
+      "value": "j",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555885.0103838,
+    "last_seen": 1747555885.0103838
+  },
+  "0f886bbad097e178c61fd84cca25f8af": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "loops",
+      "value": "num",
+      "source": "examples/advanced_patterns.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555885.0128586,
+    "last_seen": 1747555885.0128589
+  },
+  "afb660435535430fe4eaf0b9c6fe0cee": {
+    "type": "code_sample",
+    "data": {
+      "code": "// Advanced GZ Programming Patterns\n// This file demonstrates advanced programming patterns in GZ\n\n// Advanced function with multiple parameters and return value\nsimula calculate_statistics numbers\n    // Variable declarations\n    count = len(numbers)\n    sum = 0\n    min_val = numbers[0]\n    max_val = numbers[0]\n    \n    // Calculate sum, min, and max\n    para i 0 count - 1\n        current = numbers[i]\n        sum = sum + current\n        \n        kung current < min_val\n            min_val = current\n        \n        kung current > max_val\n            max_val = current\n    \n    // Calculate average\n    average = sum / count\n    \n    // Create and return statistics object\n    stats = {\n        \"count\": count,\n        \"sum\": sum,\n        \"average\": average,\n        \"min\": min_val,\n        \"max\": max_val,\n        \"range\": max_val - min_val\n    }\n    \n    balik stats\n\n// Function to generate Fibonacci sequence\nsimula fibonacci n\n    // Handle edge cases\n    kung n <= 0\n        balik []\n    kung n == 1\n        balik [0]\n    kung n == 2\n        balik [0, 1]\n    \n    // Initialize sequence with first two numbers\n    sequence = [0, 1]\n    \n    // Generate remaining numbers\n    para i 2 n - 1\n        next_number = sequence[i-1] + sequence[i-2]\n        sequence.append(next_number)\n    \n    balik sequence\n\n// Function to check if a number is prime\nsimula is_prime n\n    // Handle edge cases\n    kung n <= 1\n        balik mali\n    kung n <= 3\n        balik tama\n    kung n % 2 == 0 or n % 3 == 0\n        balik mali\n    \n    // Check for divisibility by numbers of form 6k \u00c2\u00b1 1\n    i = 5\n    habang i * i <= n\n        kung n % i == 0 or n % (i + 2) == 0\n            balik mali\n        i = i + 6\n    \n    balik tama\n\n// Function to sort an array using bubble sort\nsimula bubble_sort arr\n    n = len(arr)\n    \n    // Traverse through all array elements\n    para i 0 n - 1\n        // Last i elements are already in place\n        para j 0 n - i - 1\n            // Swap if current element is greater than next element\n            kung arr[j] > arr[j + 1]\n                temp = arr[j]\n                arr[j] = arr[j + 1]\n                arr[j + 1] = temp\n    \n    balik arr\n\n// Main function to demonstrate the advanced patterns\nsimula main\n    // Test calculate_statistics function\n    numbers = [23, 45, 12, 67, 89, 34, 56]\n    sulat \"Statistics for\", numbers\n    stats = calculate_statistics(numbers)\n    sulat \"Count:\", stats[\"count\"]\n    sulat \"Sum:\", stats[\"sum\"]\n    sulat \"Average:\", stats[\"average\"]\n    sulat \"Min:\", stats[\"min\"]\n    sulat \"Max:\", stats[\"max\"]\n    sulat \"Range:\", stats[\"range\"]\n    \n    // Test fibonacci function\n    n = 10\n    sulat \"\\nFibonacci sequence of length\", n\n    fib_sequence = fibonacci(n)\n    sulat fib_sequence\n    \n    // Test is_prime function\n    sulat \"\\nChecking prime numbers:\"\n    para num 10 20\n        kung is_prime(num)\n            sulat num, \"is prime\"\n        kundi\n            sulat num, \"is not prime\"\n    \n    // Test bubble_sort function\n    unsorted = [64, 34, 25, 12, 22, 11, 90]\n    sulat \"\\nUnsorted array:\", unsorted\n    sorted = bubble_sort(unsorted)\n    sulat \"Sorted array:\", sorted\n    \n    balik 0\n",
+      "source": "examples/advanced_patterns.gz",
+      "timestamp": 1747555885.0159984
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555885.01604,
+    "last_seen": 1747555885.01604
+  },
+  "f859602d67e475c9b6f96ec0fd335269": {
+    "type": "optimization_event",
+    "data": {
+      "original_code": "// GZ Program that needs optimization\n// This program demonstrates various patterns that can be optimized\n\nsimula main\n    // Inefficient variable assignments\n    x = 10\n    x = x + 1\n    y = 20\n    y = y - 5\n    z = 30\n    z = z * 2\n    \n    // Inefficient boolean comparisons\n    flag1 = tama\n    flag2 = mali\n    \n    kung flag1 == tama\n        sulat \"Flag1 is true\"\n    \n    kung flag2 == mali\n        sulat \"Flag2 is false\"\n    \n    // Inefficient loop syntax\n    para i = 1 hanggang 5\n        sulat \"Iteration\", i\n    \n    // Inefficient string concatenation\n    message = \"Hello\"\n    message = message + \", \"\n    message = message + \"World\"\n    message = message + \"!\"\n    sulat message\n    \n    // Inefficient array operations\n    numbers = []\n    numbers.append(1)\n    numbers.append(2)\n    numbers.append(3)\n    numbers.append(4)\n    numbers.append(5)\n    \n    sum = 0\n    para i = 0 hanggang len(numbers) - 1\n        sum = sum + numbers[i]\n    \n    sulat \"Sum:\", sum\n    \n    // Inefficient conditional checks\n    value = 42\n    \n    kung value > 0\n        kung value < 100\n            sulat \"Value is between 0 and 100\"\n    \n    // Inefficient function calls\n    result1 = calculate(10)\n    result2 = calculate(20)\n    result3 = calculate(30)\n    \n    sulat \"Results:\", result1, result2, result3\n    \n    balik 0\n\n// Inefficient function implementation\nsimula calculate input\n    // Unnecessary temporary variables\n    temp1 = input * 2\n    temp2 = temp1 + 5\n    temp3 = temp2 / 3\n    \n    // Inefficient loop\n    para i = 0 hanggang 3\n        temp3 = temp3 + i\n    \n    balik temp3\n",
+      "optimized_code": "// GZ Program that needs optimization\n// This program demonstrates various patterns that can be optimized\n\nsimula main\n    // Inefficient variable assignments\n    x = 10\n    x += 1\n    y = 20\n    y = y - 5\n    z = 30\n    z = z * 2\n    \n    // Inefficient boolean comparisons\n    flag1 = tama\n    flag2 = mali\n    \n    kung flag1\n        sulat \"Flag1 is true\"\n    \n    kung flag2 == mali\n        sulat \"Flag2 is false\"\n    \n    // Inefficient loop syntax\n    para i 1 5\n        sulat \"Iteration\", i\n    \n    // Inefficient string concatenation\n    message = \"Hello\"\n    message = message + \", \"\n    message = message + \"World\"\n    message = message + \"!\"\n    sulat message\n    \n    // Inefficient array operations\n    numbers = []\n    numbers.append(1)\n    numbers.append(2)\n    numbers.append(3)\n    numbers.append(4)\n    numbers.append(5)\n    \n    sum = 0\n    para i = 0 hanggang len(numbers) - 1\n        sum = sum + numbers[i]\n    \n    sulat \"Sum:\", sum\n    \n    // Inefficient conditional checks\n    value = 42\n    \n    kung value > 0\n        kung value < 100\n            sulat \"Value is between 0 and 100\"\n    \n    // Inefficient function calls\n    result1 = calculate(10)\n    result2 = calculate(20)\n    result3 = calculate(30)\n    \n    sulat \"Results:\", result1, result2, result3\n    \n    balik 0\n\n// Inefficient function implementation\nsimula calculate input\n    // Unnecessary temporary variables\n    temp1 = input * 2\n    temp2 = temp1 + 5\n    temp3 = temp2 / 3\n    \n    // Inefficient loop\n    para i 0 3\n        temp3 = temp3 + i\n    \n    balik temp3\n",
+      "applied_techniques": [
+        "compound_assignment",
+        "boolean_simplification",
+        "loop_range"
+      ],
+      "optimization_level": 1,
+      "timestamp": 1747555901.5274158
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.5274916,
+    "last_seen": 1747555901.5274916
+  },
+  "269c6a3ef8039716156a53e3adaebf21": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "compound_+",
+      "pattern": "(x)\\s*=\\s*\\1\\s*\\+\\s*(1)",
+      "replacement": "\\1 += \\2",
+      "explanation": "Use compound assignment for + operation"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.530163,
+    "last_seen": 1747555901.5301633
+  },
+  "5d81db3597d12d3ccb1916a9be78f039": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "compound_-",
+      "pattern": "(y)\\s*=\\s*\\1\\s*\\-\\s*(5)",
+      "replacement": "\\1 -= \\2",
+      "explanation": "Use compound assignment for - operation"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.5331511,
+    "last_seen": 1747555901.5331511
+  },
+  "cd29f96dd57e252c18713e7e4e0cf962": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "compound_*",
+      "pattern": "(z)\\s*=\\s*\\1\\s*\\*\\s*(2)",
+      "replacement": "\\1 *= \\2",
+      "explanation": "Use compound assignment for * operation"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.5355988,
+    "last_seen": 1747555901.535599
+  },
+  "60097d097e8ce095e42f5698bf484e93": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "compound_+",
+      "pattern": "(sum)\\s*=\\s*\\1\\s*\\+\\s*(numbers)",
+      "replacement": "\\1 += \\2",
+      "explanation": "Use compound assignment for + operation"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.539203,
+    "last_seen": 1747555901.539203
+  },
+  "6fda1ea138d276a3621c22730a034b4e": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "compound_+",
+      "pattern": "(temp3)\\s*=\\s*\\1\\s*\\+\\s*(i)",
+      "replacement": "\\1 += \\2",
+      "explanation": "Use compound assignment for + operation"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.5420897,
+    "last_seen": 1747555901.5420897
+  },
+  "0b96a9b32cf6106b30ff44dc5b7cfead": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "simplify_boolean_comparison",
+      "pattern": "kung\\s+(\\w+)\\s*==\\s*tama",
+      "replacement": "kung \\1",
+      "explanation": "Simplify boolean comparison with 'tama'"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.54515,
+    "last_seen": 1747555901.5451503
+  },
+  "c792986c2276868f9e935a7954aebc1f": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "simplify_loop",
+      "pattern": "para\\s+(\\w+)\\s*=\\s*(\\d+)\\s*hanggang\\s*(\\d+)",
+      "replacement": "para \\1 \\2 \\3",
+      "explanation": "Simplify loop syntax"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747555901.5482538,
+    "last_seen": 1747555901.5482538
+  }
+}
