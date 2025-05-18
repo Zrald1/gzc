@@ -797,5 +797,304 @@
     "confidence": 0.5,
     "created": 1747558414.4587078,
     "last_seen": 1747558414.4587078
+  },
+  "46a998450ca9b16b98f2c695af77974d": {
+    "type": "correction_event",
+    "data": {
+      "original_code": "// GZ UI Example\n// This example demonstrates the UI capabilities of the GZ programming language\n\n// Define UI elements\nui_element main_window {\n    type: window;\n    title: \"GZ Calculator\";\n    width: 300;\n    height: 400;\n    background: #f0f0f0;\n}\n\nui_element display {\n    type: textbox;\n    width: 280;\n    height: 50;\n    readonly: tama;\n    text: \"0\";\n    font-size: 24;\n}\n\nui_element button_1 {\n    type: button;\n    text: \"1\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_2 {\n    type: button;\n    text: \"2\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_3 {\n    type: button;\n    text: \"3\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_4 {\n    type: button;\n    text: \"4\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_5 {\n    type: button;\n    text: \"5\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_6 {\n    type: button;\n    text: \"6\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_7 {\n    type: button;\n    text: \"7\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_8 {\n    type: button;\n    text: \"8\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_9 {\n    type: button;\n    text: \"9\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_0 {\n    type: button;\n    text: \"0\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_plus {\n    type: button;\n    text: \"+\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_minus {\n    type: button;\n    text: \"-\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_multiply {\n    type: button;\n    text: \"*\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_divide {\n    type: button;\n    text: \"/\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_equals {\n    type: button;\n    text: \"=\";\n    width: 60;\n    height: 60;\n}\n\nui_element button_clear {\n    type: button;\n    text: \"C\";\n    width: 60;\n    height: 60;\n}\n\n// Define layout\nui_layout calculator_layout {\n    main_window -> display;\n    main_window -> button_1;\n    main_window -> button_2;\n    main_window -> button_3;\n    main_window -> button_4;\n    main_window -> button_5;\n    main_window -> button_6;\n    main_window -> button_7;\n    main_window -> button_8;\n    main_window -> button_9;\n    main_window -> button_0;\n    main_window -> button_plus;\n    main_window -> button_minus;\n    main_window -> button_multiply;\n    main_window -> button_divide;\n    main_window -> button_equals;\n    main_window -> button_clear;\n    \n    display @ top:10,left:10,right:10;\n    \n    button_7 @ top:70,left:10;\n    button_8 @ top:70,left:80;\n    button_9 @ top:70,left:150;\n    button_divide @ top:70,left:220;\n    \n    button_4 @ top:140,left:10;\n    button_5 @ top:140,left:80;\n    button_6 @ top:140,left:150;\n    button_multiply @ top:140,left:220;\n    \n    button_1 @ top:210,left:10;\n    button_2 @ top:210,left:80;\n    button_3 @ top:210,left:150;\n    button_minus @ top:210,left:220;\n    \n    button_0 @ top:280,left:10;\n    button_clear @ top:280,left:80;\n    button_equals @ top:280,left:150;\n    button_plus @ top:280,left:220;\n}\n\n// Define style\nui_style calculator_style {\n    background-color: #f0f0f0;\n    text-color: #333333;\n    font-family: \"Arial\";\n    font-size: 18;\n}\n\nui_style button_style {\n    background-color: #4CAF50;\n    text-color: white;\n    border-radius: 5;\n    font-weight: bold;\n}\n\nui_style display_style {\n    background-color: white;\n    text-color: #333333;\n    border: 1px solid #cccccc;\n    text-align: right;\n    padding: 10;\n}\n\n// Define events\nui_event calculator_events {\n    button_0 onClick: function_append_digit(\"0\");\n    button_1 onClick: function_append_digit(\"1\");\n    button_2 onClick: function_append_digit(\"2\");\n    button_3 onClick: function_append_digit(\"3\");\n    button_4 onClick: function_append_digit(\"4\");\n    button_5 onClick: function_append_digit(\"5\");\n    button_6 onClick: function_append_digit(\"6\");\n    button_7 onClick: function_append_digit(\"7\");\n    button_8 onClick: function_append_digit(\"8\");\n    button_9 onClick: function_append_digit(\"9\");\n    \n    button_plus onClick: function_set_operator(\"+\");\n    button_minus onClick: function_set_operator(\"-\");\n    button_multiply onClick: function_set_operator(\"*\");\n    button_divide onClick: function_set_operator(\"/\");\n    \n    button_equals onClick: function_calculate;\n    button_clear onClick: function_clear;\n}\n\n// Global variables\ncurrent_value = 0\ndisplay_value = \"0\"\noperator = \"\"\nnew_operand = tama\n\n// Main function\nsimula main\n    // Initialize UI\n    init_ui()\n    \n    // Show main window\n    show_window(main_window)\n    \n    // Start event loop\n    start_event_loop()\n    \n    balik 0\n\n// Function to append a digit to the display\nsimula function_append_digit digit\n    kung new_operand\n        display_value = digit\n        new_operand = mali\n    kundi\n        kung display_value == \"0\"\n            display_value = digit\n        kundi\n            display_value = display_value + digit\n    \n    set_text(display, display_value)\n    balik tama\n\n// Function to set the operator\nsimula function_set_operator op\n    current_value = parse_number(display_value)\n    operator = op\n    new_operand = tama\n    balik tama\n\n// Function to calculate the result\nsimula function_calculate\n    second_value = parse_number(display_value)\n    result = 0\n    \n    kung operator == \"+\"\n        result = current_value + second_value\n    kundi kung operator == \"-\"\n        result = current_value - second_value\n    kundi kung operator == \"*\"\n        result = current_value * second_value\n    kundi kung operator == \"/\"\n        kung second_value == 0\n            set_text(display, \"Error\")\n            balik tama\n        result = current_value / second_value\n    \n    display_value = to_string(result)\n    set_text(display, display_value)\n    \n    current_value = result\n    new_operand = tama\n    \n    balik tama\n\n// Function to clear the calculator\nsimula function_clear\n    current_value = 0\n    display_value = \"0\"\n    operator = \"\"\n    new_operand = tama\n    \n    set_text(display, display_value)\n    balik tama\n\n// Helper function to parse a number from a string\nsimula parse_number str\n    balik to_number(str)\n\n// Helper function to convert a number to a string\nsimula to_string num\n    balik num\n",
+      "corrected_code": "// GZ UI Example\n// This example demonstrates the UI capabilities of the GZ programming language\n\n// Define UI elements\nui_element main_window \n    type: window\n    title: \"GZ Calculator\"\n    width: 300\n    height: 400\n    background: #f0f0f0\n\n\nui_element display \n    type: textbox\n    width: 280\n    height: 50\n    readonly: tama\n    text: \"0\"\n    font-size: 24\n\n\nui_element button_1 \n    type: button\n    text: \"1\"\n    width: 60\n    height: 60\n\n\nui_element button_2 \n    type: button\n    text: \"2\"\n    width: 60\n    height: 60\n\n\nui_element button_3 \n    type: button\n    text: \"3\"\n    width: 60\n    height: 60\n\n\nui_element button_4 \n    type: button\n    text: \"4\"\n    width: 60\n    height: 60\n\n\nui_element button_5 \n    type: button\n    text: \"5\"\n    width: 60\n    height: 60\n\n\nui_element button_6 \n    type: button\n    text: \"6\"\n    width: 60\n    height: 60\n\n\nui_element button_7 \n    type: button\n    text: \"7\"\n    width: 60\n    height: 60\n\n\nui_element button_8 \n    type: button\n    text: \"8\"\n    width: 60\n    height: 60\n\n\nui_element button_9 \n    type: button\n    text: \"9\"\n    width: 60\n    height: 60\n\n\nui_element button_0 \n    type: button\n    text: \"0\"\n    width: 60\n    height: 60\n\n\nui_element button_plus \n    type: button\n    text: \"+\"\n    width: 60\n    height: 60\n\n\nui_element button_minus \n    type: button\n    text: \"-\"\n    width: 60\n    height: 60\n\n\nui_element button_multiply \n    type: button\n    text: \"*\"\n    width: 60\n    height: 60\n\n\nui_element button_divide \n    type: button\n    text: \"/\"\n    width: 60\n    height: 60\n\n\nui_element button_equals \n    type: button\n    text: \"=\"\n    width: 60\n    height: 60\n\n\nui_element button_clear \n    type: button\n    text: \"C\"\n    width: 60\n    height: 60\n\n\n// Define layout\nui_layout calculator_layout \n    main_window -> display\n    main_window -> button_1\n    main_window -> button_2\n    main_window -> button_3\n    main_window -> button_4\n    main_window -> button_5\n    main_window -> button_6\n    main_window -> button_7\n    main_window -> button_8\n    main_window -> button_9\n    main_window -> button_0\n    main_window -> button_plus\n    main_window -> button_minus\n    main_window -> button_multiply\n    main_window -> button_divide\n    main_window -> button_equals\n    main_window -> button_clear\n    \n    display @ top:10,left:10,right:10\n    \n    button_7 @ top:70,left:10\n    button_8 @ top:70,left:80\n    button_9 @ top:70,left:150\n    button_divide @ top:70,left:220\n    \n    button_4 @ top:140,left:10\n    button_5 @ top:140,left:80\n    button_6 @ top:140,left:150\n    button_multiply @ top:140,left:220\n    \n    button_1 @ top:210,left:10\n    button_2 @ top:210,left:80\n    button_3 @ top:210,left:150\n    button_minus @ top:210,left:220\n    \n    button_0 @ top:280,left:10\n    button_clear @ top:280,left:80\n    button_equals @ top:280,left:150\n    button_plus @ top:280,left:220\n\n\n// Define style\nui_style calculator_style \n    background-color: #f0f0f0\n    text-color: #333333\n    font-family: \"Arial\"\n    font-size: 18\n\n\nui_style button_style \n    background-color: #4CAF50\n    text-color: white\n    border-radius: 5\n    font-weight: bold\n\n\nui_style display_style \n    background-color: white\n    text-color: #333333\n    border: 1px solid #cccccc\n    text-align: right\n    padding: 10\n\n\n// Define events\nui_event calculator_events \n    button_0 onClick: function_append_digit \"0\"\n    button_1 onClick: function_append_digit \"1\"\n    button_2 onClick: function_append_digit \"2\"\n    button_3 onClick: function_append_digit \"3\"\n    button_4 onClick: function_append_digit \"4\"\n    button_5 onClick: function_append_digit \"5\"\n    button_6 onClick: function_append_digit \"6\"\n    button_7 onClick: function_append_digit \"7\"\n    button_8 onClick: function_append_digit \"8\"\n    button_9 onClick: function_append_digit \"9\"\n    \n    button_plus onClick: function_set_operator \"+\"\n    button_minus onClick: function_set_operator \"-\"\n    button_multiply onClick: function_set_operator \"*\"\n    button_divide onClick: function_set_operator \"/\"\n    \n    button_equals onClick: function_calculate\n    button_clear onClick: function_clear\n\n\n// Global variables\ncurrent_value = 0\ndisplay_value = \"0\"\noperator = \"\"\nnew_operand = tama\n\n// Main function\nsimula main\n    // Initialize UI\n    init_ui \n    \n    // Show main window\n    show_window main_window\n    \n    // Start event loop\n    start_event_loop \n    \n    balik 0\n\n// Function to append a digit to the display\nsimula function_append_digit digit\n    kung new_operand\n        display_value = digit\n        new_operand = mali\n    kundi\n        kung display_value == \"0\"\n            display_value = digit\n        kundi\n            display_value = display_value + digit\n    \n    set_text display, display_value\n    balik tama\n\n// Function to set the operator\nsimula function_set_operator op\n    current_value = parse_number display_value\n    operator = op\n    new_operand = tama\n    balik tama\n\n// Function to calculate the result\nsimula function_calculate\n    second_value = parse_number display_value\n    result = 0\n    \n    kung operator == \"+\"\n        result = current_value + second_value\n    kundi kung operator == \"-\"\n        result = current_value - second_value\n    kundi kung operator == \"*\"\n        result = current_value * second_value\n    kundi kung operator == \"/\"\n        kung second_value == 0\n            set_text display, \"Error\"\n            balik tama\n        result = current_value / second_value\n    \n    display_value = to_string result\n    set_text display, display_value\n    \n    current_value = result\n    new_operand = tama\n    \n    balik tama\n\n// Function to clear the calculator\nsimula function_clear\n    current_value = 0\n    display_value = \"0\"\n    operator = \"\"\n    new_operand = tama\n    \n    set_text display, display_value\n    balik tama\n\n// Helper function to parse a number from a string\nsimula parse_number str\n    balik to_number str\n\n// Helper function to convert a number to a string\nsimula to_string num\n    balik num\n",
+      "error_message": null,
+      "applied_rules": [
+        "function_call_with_parentheses",
+        "semicolons",
+        "braces"
+      ],
+      "timestamp": 1747558426.510745
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558426.5108566,
+    "last_seen": 1747558426.5108566
+  },
+  "ee550eb04b8273af99e5f889b70fa4e6": {
+    "type": "optimization_event",
+    "data": {
+      "original_code": "// GZ UI Example\n// This example demonstrates the UI capabilities of the GZ programming language\n\n// Define UI elements\nui_element main_window \n    type: window\n    title: \"GZ Calculator\"\n    width: 300\n    height: 400\n    background: #f0f0f0\n\n\nui_element display \n    type: textbox\n    width: 280\n    height: 50\n    readonly: tama\n    text: \"0\"\n    font-size: 24\n\n\nui_element button_1 \n    type: button\n    text: \"1\"\n    width: 60\n    height: 60\n\n\nui_element button_2 \n    type: button\n    text: \"2\"\n    width: 60\n    height: 60\n\n\nui_element button_3 \n    type: button\n    text: \"3\"\n    width: 60\n    height: 60\n\n\nui_element button_4 \n    type: button\n    text: \"4\"\n    width: 60\n    height: 60\n\n\nui_element button_5 \n    type: button\n    text: \"5\"\n    width: 60\n    height: 60\n\n\nui_element button_6 \n    type: button\n    text: \"6\"\n    width: 60\n    height: 60\n\n\nui_element button_7 \n    type: button\n    text: \"7\"\n    width: 60\n    height: 60\n\n\nui_element button_8 \n    type: button\n    text: \"8\"\n    width: 60\n    height: 60\n\n\nui_element button_9 \n    type: button\n    text: \"9\"\n    width: 60\n    height: 60\n\n\nui_element button_0 \n    type: button\n    text: \"0\"\n    width: 60\n    height: 60\n\n\nui_element button_plus \n    type: button\n    text: \"+\"\n    width: 60\n    height: 60\n\n\nui_element button_minus \n    type: button\n    text: \"-\"\n    width: 60\n    height: 60\n\n\nui_element button_multiply \n    type: button\n    text: \"*\"\n    width: 60\n    height: 60\n\n\nui_element button_divide \n    type: button\n    text: \"/\"\n    width: 60\n    height: 60\n\n\nui_element button_equals \n    type: button\n    text: \"=\"\n    width: 60\n    height: 60\n\n\nui_element button_clear \n    type: button\n    text: \"C\"\n    width: 60\n    height: 60\n\n\n// Define layout\nui_layout calculator_layout \n    main_window -> display\n    main_window -> button_1\n    main_window -> button_2\n    main_window -> button_3\n    main_window -> button_4\n    main_window -> button_5\n    main_window -> button_6\n    main_window -> button_7\n    main_window -> button_8\n    main_window -> button_9\n    main_window -> button_0\n    main_window -> button_plus\n    main_window -> button_minus\n    main_window -> button_multiply\n    main_window -> button_divide\n    main_window -> button_equals\n    main_window -> button_clear\n    \n    display @ top:10,left:10,right:10\n    \n    button_7 @ top:70,left:10\n    button_8 @ top:70,left:80\n    button_9 @ top:70,left:150\n    button_divide @ top:70,left:220\n    \n    button_4 @ top:140,left:10\n    button_5 @ top:140,left:80\n    button_6 @ top:140,left:150\n    button_multiply @ top:140,left:220\n    \n    button_1 @ top:210,left:10\n    button_2 @ top:210,left:80\n    button_3 @ top:210,left:150\n    button_minus @ top:210,left:220\n    \n    button_0 @ top:280,left:10\n    button_clear @ top:280,left:80\n    button_equals @ top:280,left:150\n    button_plus @ top:280,left:220\n\n\n// Define style\nui_style calculator_style \n    background-color: #f0f0f0\n    text-color: #333333\n    font-family: \"Arial\"\n    font-size: 18\n\n\nui_style button_style \n    background-color: #4CAF50\n    text-color: white\n    border-radius: 5\n    font-weight: bold\n\n\nui_style display_style \n    background-color: white\n    text-color: #333333\n    border: 1px solid #cccccc\n    text-align: right\n    padding: 10\n\n\n// Define events\nui_event calculator_events \n    button_0 onClick: function_append_digit \"0\"\n    button_1 onClick: function_append_digit \"1\"\n    button_2 onClick: function_append_digit \"2\"\n    button_3 onClick: function_append_digit \"3\"\n    button_4 onClick: function_append_digit \"4\"\n    button_5 onClick: function_append_digit \"5\"\n    button_6 onClick: function_append_digit \"6\"\n    button_7 onClick: function_append_digit \"7\"\n    button_8 onClick: function_append_digit \"8\"\n    button_9 onClick: function_append_digit \"9\"\n    \n    button_plus onClick: function_set_operator \"+\"\n    button_minus onClick: function_set_operator \"-\"\n    button_multiply onClick: function_set_operator \"*\"\n    button_divide onClick: function_set_operator \"/\"\n    \n    button_equals onClick: function_calculate\n    button_clear onClick: function_clear\n\n\n// Global variables\ncurrent_value = 0\ndisplay_value = \"0\"\noperator = \"\"\nnew_operand = tama\n\n// Main function\nsimula main\n    // Initialize UI\n    init_ui \n    \n    // Show main window\n    show_window main_window\n    \n    // Start event loop\n    start_event_loop \n    \n    balik 0\n\n// Function to append a digit to the display\nsimula function_append_digit digit\n    kung new_operand\n        display_value = digit\n        new_operand = mali\n    kundi\n        kung display_value == \"0\"\n            display_value = digit\n        kundi\n            display_value = display_value + digit\n    \n    set_text display, display_value\n    balik tama\n\n// Function to set the operator\nsimula function_set_operator op\n    current_value = parse_number display_value\n    operator = op\n    new_operand = tama\n    balik tama\n\n// Function to calculate the result\nsimula function_calculate\n    second_value = parse_number display_value\n    result = 0\n    \n    kung operator == \"+\"\n        result = current_value + second_value\n    kundi kung operator == \"-\"\n        result = current_value - second_value\n    kundi kung operator == \"*\"\n        result = current_value * second_value\n    kundi kung operator == \"/\"\n        kung second_value == 0\n            set_text display, \"Error\"\n            balik tama\n        result = current_value / second_value\n    \n    display_value = to_string result\n    set_text display, display_value\n    \n    current_value = result\n    new_operand = tama\n    \n    balik tama\n\n// Function to clear the calculator\nsimula function_clear\n    current_value = 0\n    display_value = \"0\"\n    operator = \"\"\n    new_operand = tama\n    \n    set_text display, display_value\n    balik tama\n\n// Helper function to parse a number from a string\nsimula parse_number str\n    balik to_number str\n\n// Helper function to convert a number to a string\nsimula to_string num\n    balik num\n",
+      "optimized_code": "// GZ UI Example\n// This example demonstrates the UI capabilities of the GZ programming language\n\n// Define UI elements\nui_element main_window \n    type: window\n    title: \"GZ Calculator\"\n    width: 300\n    height: 400\n    background: #f0f0f0\n\n\nui_element display \n    type: textbox\n    width: 280\n    height: 50\n    readonly: tama\n    text: \"0\"\n    font-size: 24\n\n\nui_element button_1 \n    type: button\n    text: \"1\"\n    width: 60\n    height: 60\n\n\nui_element button_2 \n    type: button\n    text: \"2\"\n    width: 60\n    height: 60\n\n\nui_element button_3 \n    type: button\n    text: \"3\"\n    width: 60\n    height: 60\n\n\nui_element button_4 \n    type: button\n    text: \"4\"\n    width: 60\n    height: 60\n\n\nui_element button_5 \n    type: button\n    text: \"5\"\n    width: 60\n    height: 60\n\n\nui_element button_6 \n    type: button\n    text: \"6\"\n    width: 60\n    height: 60\n\n\nui_element button_7 \n    type: button\n    text: \"7\"\n    width: 60\n    height: 60\n\n\nui_element button_8 \n    type: button\n    text: \"8\"\n    width: 60\n    height: 60\n\n\nui_element button_9 \n    type: button\n    text: \"9\"\n    width: 60\n    height: 60\n\n\nui_element button_0 \n    type: button\n    text: \"0\"\n    width: 60\n    height: 60\n\n\nui_element button_plus \n    type: button\n    text: \"+\"\n    width: 60\n    height: 60\n\n\nui_element button_minus \n    type: button\n    text: \"-\"\n    width: 60\n    height: 60\n\n\nui_element button_multiply \n    type: button\n    text: \"*\"\n    width: 60\n    height: 60\n\n\nui_element button_divide \n    type: button\n    text: \"/\"\n    width: 60\n    height: 60\n\n\nui_element button_equals \n    type: button\n    text: \"=\"\n    width: 60\n    height: 60\n\n\nui_element button_clear \n    type: button\n    text: \"C\"\n    width: 60\n    height: 60\n\n\n// Define layout\nui_layout calculator_layout \n    main_window -> display\n    main_window -> button_1\n    main_window -> button_2\n    main_window -> button_3\n    main_window -> button_4\n    main_window -> button_5\n    main_window -> button_6\n    main_window -> button_7\n    main_window -> button_8\n    main_window -> button_9\n    main_window -> button_0\n    main_window -> button_plus\n    main_window -> button_minus\n    main_window -> button_multiply\n    main_window -> button_divide\n    main_window -> button_equals\n    main_window -> button_clear\n    \n    display @ top:10,left:10,right:10\n    \n    button_7 @ top:70,left:10\n    button_8 @ top:70,left:80\n    button_9 @ top:70,left:150\n    button_divide @ top:70,left:220\n    \n    button_4 @ top:140,left:10\n    button_5 @ top:140,left:80\n    button_6 @ top:140,left:150\n    button_multiply @ top:140,left:220\n    \n    button_1 @ top:210,left:10\n    button_2 @ top:210,left:80\n    button_3 @ top:210,left:150\n    button_minus @ top:210,left:220\n    \n    button_0 @ top:280,left:10\n    button_clear @ top:280,left:80\n    button_equals @ top:280,left:150\n    button_plus @ top:280,left:220\n\n\n// Define style\nui_style calculator_style \n    background-color: #f0f0f0\n    text-color: #333333\n    font-family: \"Arial\"\n    font-size: 18\n\n\nui_style button_style \n    background-color: #4CAF50\n    text-color: white\n    border-radius: 5\n    font-weight: bold\n\n\nui_style display_style \n    background-color: white\n    text-color: #333333\n    border: 1px solid #cccccc\n    text-align: right\n    padding: 10\n\n\n// Define events\nui_event calculator_events \n    button_0 onClick: function_append_digit \"0\"\n    button_1 onClick: function_append_digit \"1\"\n    button_2 onClick: function_append_digit \"2\"\n    button_3 onClick: function_append_digit \"3\"\n    button_4 onClick: function_append_digit \"4\"\n    button_5 onClick: function_append_digit \"5\"\n    button_6 onClick: function_append_digit \"6\"\n    button_7 onClick: function_append_digit \"7\"\n    button_8 onClick: function_append_digit \"8\"\n    button_9 onClick: function_append_digit \"9\"\n    \n    button_plus onClick: function_set_operator \"+\"\n    button_minus onClick: function_set_operator \"-\"\n    button_multiply onClick: function_set_operator \"*\"\n    button_divide onClick: function_set_operator \"/\"\n    \n    button_equals onClick: function_calculate\n    button_clear onClick: function_clear\n\n\n// Global variables\ncurrent_value = 0\ndisplay_value = \"0\"\noperator = \"\"\nnew_operand = tama\n\n// Main function\nsimula main\n    // Initialize UI\n    init_ui \n    \n    // Show main window\n    show_window main_window\n    \n    // Start event loop\n    start_event_loop \n    \n    balik 0\n\n// Function to append a digit to the display\nsimula function_append_digit digit\n    kung new_operand\n        display_value = digit\n        new_operand = mali\n    kundi\n        kung display_value == \"0\"\n            display_value = digit\n        kundi\n            display_value += digit\n    \n    set_text display, display_value\n    balik tama\n\n// Function to set the operator\nsimula function_set_operator op\n    current_value = parse_number display_value\n    operator = op\n    new_operand = tama\n    balik tama\n\n// Function to calculate the result\nsimula function_calculate\n    second_value = parse_number display_value\n    result = 0\n    \n    kung operator == \"+\"\n        result = current_value + second_value\n    kundi kung operator == \"-\"\n        result = current_value - second_value\n    kundi kung operator == \"*\"\n        result = current_value * second_value\n    kundi kung operator == \"/\"\n        kung second_value == 0\n            set_text display, \"Error\"\n            balik tama\n        result = current_value / second_value\n    \n    display_value = to_string result\n    set_text display, display_value\n    \n    current_value = result\n    new_operand = tama\n    \n    balik tama\n\n// Function to clear the calculator\nsimula function_clear\n    current_value = 0\n    display_value = \"0\"\n    operator = \"\"\n    new_operand = tama\n    \n    set_text display, display_value\n    balik tama\n\n// Helper function to parse a number from a string\nsimula parse_number str\n    balik to_number str\n\n// Helper function to convert a number to a string\nsimula to_string num\n    balik num\n",
+      "applied_techniques": [
+        "compound_assignment"
+      ],
+      "optimization_level": 1,
+      "timestamp": 1747558426.517806
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558426.517891,
+    "last_seen": 1747558426.517891
+  },
+  "5eb2ab8913752f584840f48327de18eb": {
+    "type": "optimization_rule",
+    "data": {
+      "name": "compound_+",
+      "pattern": "(display_value)\\s*=\\s*\\1\\s*\\+\\s*(digit)",
+      "replacement": "\\1 += \\2",
+      "explanation": "Use compound assignment for + operation"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558426.523658,
+    "last_seen": 1747558426.523658
+  },
+  "21f9ec00b7444f65928526a942ee3a50": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "main",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558431.8974771,
+    "last_seen": 1747558431.8974774
+  },
+  "23d7cb3d15110a0f2778dfbbfb790ee8": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "function_append_digit",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558431.9036572,
+    "last_seen": 1747558431.9036572
+  },
+  "1aa01fb4515d2179aaf2f83da35d9d6b": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "function_set_operator",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558431.912755,
+    "last_seen": 1747558431.912755
+  },
+  "94190f86e9cc8b4e48407601b08601a1": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "function_calculate",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558431.9448318,
+    "last_seen": 1747558431.9448318
+  },
+  "1ef8595951871ebf11e5d84bfb4dbff6": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "function_clear",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558431.955417,
+    "last_seen": 1747558431.955417
+  },
+  "1f218d5939b9402212693d014da6a0b0": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "parse_number",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558431.962122,
+    "last_seen": 1747558431.9621222
+  },
+  "34a825fb407c1bb0b0dca3a6c9316d94": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "function_definitions",
+      "value": "to_string",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558431.9705443,
+    "last_seen": 1747558431.9705446
+  },
+  "9d0eb73e13249f0bc473669bd4ab1d53": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "current_value",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 4,
+    "confidence": 0.5,
+    "created": 1747558431.978009,
+    "last_seen": 1747558432.0441153
+  },
+  "6716724c893841483b5e8ad96429f2f5": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "display_value",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 6,
+    "confidence": 0.5,
+    "created": 1747558431.989201,
+    "last_seen": 1747558432.0443153
+  },
+  "526bfb95857f28de2a895181534acd11": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "operator",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 7,
+    "confidence": 0.5,
+    "created": 1747558432.0075746,
+    "last_seen": 1747558432.0444813
+  },
+  "5c12ec7042394a80731011d86bd12874": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "new_operand",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 5,
+    "confidence": 0.5,
+    "created": 1747558432.0187023,
+    "last_seen": 1747558432.0446744
+  },
+  "873fd294e5a47480a61d05a08bb8b2d4": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "second_value",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 2,
+    "confidence": 0.5,
+    "created": 1747558432.0267522,
+    "last_seen": 1747558432.0432222
+  },
+  "35c84d18dbccfcaec413210baef9fd27": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "variable_assignments",
+      "value": "result",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 5,
+    "confidence": 0.5,
+    "created": 1747558432.0346997,
+    "last_seen": 1747558432.0434163
+  },
+  "208fd8ea496357349b8d15cef53391dd": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "new_operand",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558432.0449002,
+    "last_seen": 1747558432.0449007
+  },
+  "bd969a07e80ecad18c690e24b7aa78a9": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "display_value == \"0\"",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558432.0563006,
+    "last_seen": 1747558432.0563009
+  },
+  "40b894cd3c536df6b97ded0cc04dfac3": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "operator == \"+\"",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558432.0779586,
+    "last_seen": 1747558432.0779588
+  },
+  "948db2d2a1a3c823e44054ad944970a7": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "operator == \"-\"",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558432.087675,
+    "last_seen": 1747558432.0876753
+  },
+  "6212e44390839ead076ae0d63bb45ee2": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "operator == \"*\"",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558432.0954802,
+    "last_seen": 1747558432.0954807
+  },
+  "27cfb7ccaa47dc7d683a71544ed6b047": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "operator == \"/\"",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558432.1022036,
+    "last_seen": 1747558432.1022038
+  },
+  "b3c457ab6c7c142df3c7cf71b88e237a": {
+    "type": "syntax_pattern",
+    "data": {
+      "type": "conditionals",
+      "value": "second_value == 0",
+      "source": "examples/ui_example.gz"
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558432.1078212,
+    "last_seen": 1747558432.1078215
+  },
+  "93cee53c9c396d57c823d4e2eee2b486": {
+    "type": "code_sample",
+    "data": {
+      "code": "// GZ UI Example\n// This example demonstrates the UI capabilities of the GZ programming language\n\n// Define UI elements\nui_element main_window \n    type: window\n    title: \"GZ Calculator\"\n    width: 300\n    height: 400\n    background: #f0f0f0\n\n\nui_element display \n    type: textbox\n    width: 280\n    height: 50\n    readonly: tama\n    text: \"0\"\n    font-size: 24\n\n\nui_element button_1 \n    type: button\n    text: \"1\"\n    width: 60\n    height: 60\n\n\nui_element button_2 \n    type: button\n    text: \"2\"\n    width: 60\n    height: 60\n\n\nui_element button_3 \n    type: button\n    text: \"3\"\n    width: 60\n    height: 60\n\n\nui_element button_4 \n    type: button\n    text: \"4\"\n    width: 60\n    height: 60\n\n\nui_element button_5 \n    type: button\n    text: \"5\"\n    width: 60\n    height: 60\n\n\nui_element button_6 \n    type: button\n    text: \"6\"\n    width: 60\n    height: 60\n\n\nui_element button_7 \n    type: button\n    text: \"7\"\n    width: 60\n    height: 60\n\n\nui_element button_8 \n    type: button\n    text: \"8\"\n    width: 60\n    height: 60\n\n\nui_element button_9 \n    type: button\n    text: \"9\"\n    width: 60\n    height: 60\n\n\nui_element button_0 \n    type: button\n    text: \"0\"\n    width: 60\n    height: 60\n\n\nui_element button_plus \n    type: button\n    text: \"+\"\n    width: 60\n    height: 60\n\n\nui_element button_minus \n    type: button\n    text: \"-\"\n    width: 60\n    height: 60\n\n\nui_element button_multiply \n    type: button\n    text: \"*\"\n    width: 60\n    height: 60\n\n\nui_element button_divide \n    type: button\n    text: \"/\"\n    width: 60\n    height: 60\n\n\nui_element button_equals \n    type: button\n    text: \"=\"\n    width: 60\n    height: 60\n\n\nui_element button_clear \n    type: button\n    text: \"C\"\n    width: 60\n    height: 60\n\n\n// Define layout\nui_layout calculator_layout \n    main_window -> display\n    main_window -> button_1\n    main_window -> button_2\n    main_window -> button_3\n    main_window -> button_4\n    main_window -> button_5\n    main_window -> button_6\n    main_window -> button_7\n    main_window -> button_8\n    main_window -> button_9\n    main_window -> button_0\n    main_window -> button_plus\n    main_window -> button_minus\n    main_window -> button_multiply\n    main_window -> button_divide\n    main_window -> button_equals\n    main_window -> button_clear\n    \n    display @ top:10,left:10,right:10\n    \n    button_7 @ top:70,left:10\n    button_8 @ top:70,left:80\n    button_9 @ top:70,left:150\n    button_divide @ top:70,left:220\n    \n    button_4 @ top:140,left:10\n    button_5 @ top:140,left:80\n    button_6 @ top:140,left:150\n    button_multiply @ top:140,left:220\n    \n    button_1 @ top:210,left:10\n    button_2 @ top:210,left:80\n    button_3 @ top:210,left:150\n    button_minus @ top:210,left:220\n    \n    button_0 @ top:280,left:10\n    button_clear @ top:280,left:80\n    button_equals @ top:280,left:150\n    button_plus @ top:280,left:220\n\n\n// Define style\nui_style calculator_style \n    background-color: #f0f0f0\n    text-color: #333333\n    font-family: \"Arial\"\n    font-size: 18\n\n\nui_style button_style \n    background-color: #4CAF50\n    text-color: white\n    border-radius: 5\n    font-weight: bold\n\n\nui_style display_style \n    background-color: white\n    text-color: #333333\n    border: 1px solid #cccccc\n    text-align: right\n    padding: 10\n\n\n// Define events\nui_event calculator_events \n    button_0 onClick: function_append_digit \"0\"\n    button_1 onClick: function_append_digit \"1\"\n    button_2 onClick: function_append_digit \"2\"\n    button_3 onClick: function_append_digit \"3\"\n    button_4 onClick: function_append_digit \"4\"\n    button_5 onClick: function_append_digit \"5\"\n    button_6 onClick: function_append_digit \"6\"\n    button_7 onClick: function_append_digit \"7\"\n    button_8 onClick: function_append_digit \"8\"\n    button_9 onClick: function_append_digit \"9\"\n    \n    button_plus onClick: function_set_operator \"+\"\n    button_minus onClick: function_set_operator \"-\"\n    button_multiply onClick: function_set_operator \"*\"\n    button_divide onClick: function_set_operator \"/\"\n    \n    button_equals onClick: function_calculate\n    button_clear onClick: function_clear\n\n\n// Global variables\ncurrent_value = 0\ndisplay_value = \"0\"\noperator = \"\"\nnew_operand = tama\n\n// Main function\nsimula main\n    // Initialize UI\n    init_ui \n    \n    // Show main window\n    show_window main_window\n    \n    // Start event loop\n    start_event_loop \n    \n    balik 0\n\n// Function to append a digit to the display\nsimula function_append_digit digit\n    kung new_operand\n        display_value = digit\n        new_operand = mali\n    kundi\n        kung display_value == \"0\"\n            display_value = digit\n        kundi\n            display_value += digit\n    \n    set_text display, display_value\n    balik tama\n\n// Function to set the operator\nsimula function_set_operator op\n    current_value = parse_number display_value\n    operator = op\n    new_operand = tama\n    balik tama\n\n// Function to calculate the result\nsimula function_calculate\n    second_value = parse_number display_value\n    result = 0\n    \n    kung operator == \"+\"\n        result = current_value + second_value\n    kundi kung operator == \"-\"\n        result = current_value - second_value\n    kundi kung operator == \"*\"\n        result = current_value * second_value\n    kundi kung operator == \"/\"\n        kung second_value == 0\n            set_text display, \"Error\"\n            balik tama\n        result = current_value / second_value\n    \n    display_value = to_string result\n    set_text display, display_value\n    \n    current_value = result\n    new_operand = tama\n    \n    balik tama\n\n// Function to clear the calculator\nsimula function_clear\n    current_value = 0\n    display_value = \"0\"\n    operator = \"\"\n    new_operand = tama\n    \n    set_text display, display_value\n    balik tama\n\n// Helper function to parse a number from a string\nsimula parse_number str\n    balik to_number str\n\n// Helper function to convert a number to a string\nsimula to_string num\n    balik num\n",
+      "source": "examples/ui_example.gz",
+      "timestamp": 1747558432.115554
+    },
+    "frequency": 1,
+    "confidence": 0.5,
+    "created": 1747558432.1156533,
+    "last_seen": 1747558432.1156533
   }
 }
