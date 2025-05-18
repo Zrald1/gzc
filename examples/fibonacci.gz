@@ -1,0 +1,67 @@
+// Fibonacci sequence calculator in GZ
+
+// Function to calculate the nth Fibonacci number (recursive)
+simula fibonacci_recursive n
+    kung n <= 1
+        balik n
+    
+    balik fibonacci_recursive(n-1) + fibonacci_recursive(n-2)
+
+// Function to calculate the nth Fibonacci number (iterative)
+simula fibonacci_iterative n
+    kung n <= 1
+        balik n
+    
+    a = 0
+    b = 1
+    
+    para i 2 n
+        temp = a
+        a = b
+        b = temp + b
+    
+    balik b
+
+// Function to measure execution time
+simula measure_time func n
+    start_time = current_time()
+    result = func(n)
+    end_time = current_time()
+    
+    execution_time = end_time - start_time
+    
+    balik result, execution_time
+
+// Main function
+simula main
+    sulat "Fibonacci Sequence Calculator"
+    sulat "----------------------------"
+    
+    // Print the first 10 Fibonacci numbers
+    sulat "First 10 Fibonacci numbers:"
+    para i 0 9
+        sulat "fibonacci(", i, ") =", fibonacci_iterative(i)
+    
+    // Compare recursive and iterative implementations
+    sulat "\nComparing recursive and iterative implementations:"
+    
+    n = 30
+    
+    recursive_result, recursive_time = measure_time(fibonacci_recursive, n)
+    iterative_result, iterative_time = measure_time(fibonacci_iterative, n)
+    
+    sulat "fibonacci_recursive(", n, ") =", recursive_result
+    sulat "Execution time:", recursive_time, "seconds"
+    
+    sulat "fibonacci_iterative(", n, ") =", iterative_result
+    sulat "Execution time:", iterative_time, "seconds"
+    
+    // Calculate speedup
+    speedup = recursive_time / iterative_time
+    sulat "Speedup:", speedup, "x"
+    
+    balik 0
+
+// Helper function to get current time
+simula current_time
+    balik 0  // Placeholder, would be implemented in the actual runtime

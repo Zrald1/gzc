@@ -1,0 +1,303 @@
+// GZ UI Example
+// This example demonstrates the UI capabilities of the GZ programming language
+
+// Define UI elements
+ui_element main_window {
+    type: window;
+    title: "GZ Calculator";
+    width: 300;
+    height: 400;
+    background: #f0f0f0;
+}
+
+ui_element display {
+    type: textbox;
+    width: 280;
+    height: 50;
+    readonly: tama;
+    text: "0";
+    font-size: 24;
+}
+
+ui_element button_1 {
+    type: button;
+    text: "1";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_2 {
+    type: button;
+    text: "2";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_3 {
+    type: button;
+    text: "3";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_4 {
+    type: button;
+    text: "4";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_5 {
+    type: button;
+    text: "5";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_6 {
+    type: button;
+    text: "6";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_7 {
+    type: button;
+    text: "7";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_8 {
+    type: button;
+    text: "8";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_9 {
+    type: button;
+    text: "9";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_0 {
+    type: button;
+    text: "0";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_plus {
+    type: button;
+    text: "+";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_minus {
+    type: button;
+    text: "-";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_multiply {
+    type: button;
+    text: "*";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_divide {
+    type: button;
+    text: "/";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_equals {
+    type: button;
+    text: "=";
+    width: 60;
+    height: 60;
+}
+
+ui_element button_clear {
+    type: button;
+    text: "C";
+    width: 60;
+    height: 60;
+}
+
+// Define layout
+ui_layout calculator_layout {
+    main_window -> display;
+    main_window -> button_1;
+    main_window -> button_2;
+    main_window -> button_3;
+    main_window -> button_4;
+    main_window -> button_5;
+    main_window -> button_6;
+    main_window -> button_7;
+    main_window -> button_8;
+    main_window -> button_9;
+    main_window -> button_0;
+    main_window -> button_plus;
+    main_window -> button_minus;
+    main_window -> button_multiply;
+    main_window -> button_divide;
+    main_window -> button_equals;
+    main_window -> button_clear;
+    
+    display @ top:10,left:10,right:10;
+    
+    button_7 @ top:70,left:10;
+    button_8 @ top:70,left:80;
+    button_9 @ top:70,left:150;
+    button_divide @ top:70,left:220;
+    
+    button_4 @ top:140,left:10;
+    button_5 @ top:140,left:80;
+    button_6 @ top:140,left:150;
+    button_multiply @ top:140,left:220;
+    
+    button_1 @ top:210,left:10;
+    button_2 @ top:210,left:80;
+    button_3 @ top:210,left:150;
+    button_minus @ top:210,left:220;
+    
+    button_0 @ top:280,left:10;
+    button_clear @ top:280,left:80;
+    button_equals @ top:280,left:150;
+    button_plus @ top:280,left:220;
+}
+
+// Define style
+ui_style calculator_style {
+    background-color: #f0f0f0;
+    text-color: #333333;
+    font-family: "Arial";
+    font-size: 18;
+}
+
+ui_style button_style {
+    background-color: #4CAF50;
+    text-color: white;
+    border-radius: 5;
+    font-weight: bold;
+}
+
+ui_style display_style {
+    background-color: white;
+    text-color: #333333;
+    border: 1px solid #cccccc;
+    text-align: right;
+    padding: 10;
+}
+
+// Define events
+ui_event calculator_events {
+    button_0 onClick: function_append_digit("0");
+    button_1 onClick: function_append_digit("1");
+    button_2 onClick: function_append_digit("2");
+    button_3 onClick: function_append_digit("3");
+    button_4 onClick: function_append_digit("4");
+    button_5 onClick: function_append_digit("5");
+    button_6 onClick: function_append_digit("6");
+    button_7 onClick: function_append_digit("7");
+    button_8 onClick: function_append_digit("8");
+    button_9 onClick: function_append_digit("9");
+    
+    button_plus onClick: function_set_operator("+");
+    button_minus onClick: function_set_operator("-");
+    button_multiply onClick: function_set_operator("*");
+    button_divide onClick: function_set_operator("/");
+    
+    button_equals onClick: function_calculate;
+    button_clear onClick: function_clear;
+}
+
+// Global variables
+current_value = 0
+display_value = "0"
+operator = ""
+new_operand = tama
+
+// Main function
+simula main
+    // Initialize UI
+    init_ui()
+    
+    // Show main window
+    show_window(main_window)
+    
+    // Start event loop
+    start_event_loop()
+    
+    balik 0
+
+// Function to append a digit to the display
+simula function_append_digit digit
+    kung new_operand
+        display_value = digit
+        new_operand = mali
+    kundi
+        kung display_value == "0"
+            display_value = digit
+        kundi
+            display_value = display_value + digit
+    
+    set_text(display, display_value)
+    balik tama
+
+// Function to set the operator
+simula function_set_operator op
+    current_value = parse_number(display_value)
+    operator = op
+    new_operand = tama
+    balik tama
+
+// Function to calculate the result
+simula function_calculate
+    second_value = parse_number(display_value)
+    result = 0
+    
+    kung operator == "+"
+        result = current_value + second_value
+    kundi kung operator == "-"
+        result = current_value - second_value
+    kundi kung operator == "*"
+        result = current_value * second_value
+    kundi kung operator == "/"
+        kung second_value == 0
+            set_text(display, "Error")
+            balik tama
+        result = current_value / second_value
+    
+    display_value = to_string(result)
+    set_text(display, display_value)
+    
+    current_value = result
+    new_operand = tama
+    
+    balik tama
+
+// Function to clear the calculator
+simula function_clear
+    current_value = 0
+    display_value = "0"
+    operator = ""
+    new_operand = tama
+    
+    set_text(display, display_value)
+    balik tama
+
+// Helper function to parse a number from a string
+simula parse_number str
+    balik to_number(str)
+
+// Helper function to convert a number to a string
+simula to_string num
+    balik num

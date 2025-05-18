@@ -1,0 +1,21 @@
+// Hello World program in GZ
+
+simula main
+    sulat "Hello, World!"
+    sulat "Welcome to GZ Programming Language!"
+    
+    // Show some basic features
+    name = "Juan"
+    age = 25
+    
+    sulat "My name is", name
+    sulat "I am", age, "years old"
+    
+    // Simple calculation
+    a = 10
+    b = 20
+    c = a + b
+    
+    sulat "The sum of", a, "and", b, "is", c
+    
+    balik 0
