@@ -69,6 +69,9 @@ class GZCompiler:
         self.ai_level = args.ai_level
         self.ai_auto_correct = not args.no_auto_correct
         self.ai_auto_optimize = not args.no_auto_optimize
+        self.ai_auto_update = not args.no_auto_update
+        self.force_update = args.force_update
+        self.show_ai_stats = args.ai_stats
         self.ai_interactive = args.ai_interactive
         self.ai_model_path = args.ai_model
         self.generate_code = args.generate is not None
@@ -79,7 +82,14 @@ class GZCompiler:
         self.ai = None
         if AI_AVAILABLE and self.ai_enabled:
             try:
-                self.ai = AICapabilities()
+                # Configure AI
+                ai_config = {
+                    "intelligence_level": self.ai_level,
+                    "auto_update": self.ai_auto_update,
+                    "model_path": self.ai_model_path
+                }
+
+                self.ai = AICapabilities(ai_config)
                 self.ai.initialize()
                 logger.info(f"AI capabilities initialized with intelligence level {self.ai_level}")
             except Exception as e:
@@ -98,6 +108,63 @@ class GZCompiler:
 
     def compile(self):
         """Compile the source file"""
+        # Handle force update
+        if self.force_update:
+            if not self.ai:
+                logger.error("AI capabilities required for force update")
+                return False
+
+            # Check if self-improvement is available
+            if not hasattr(self.ai, 'self_improvement') or not self.ai.self_improvement:
+                logger.error("Self-improvement capabilities not available")
+                return False
+
+            logger.info("Forcing update to GitHub repository")
+            success = self.ai.self_improvement.force_update()
+
+            if success:
+                logger.info("Successfully updated GitHub repository")
+            else:
+                logger.error("Failed to update GitHub repository")
+
+            return success
+
+        # Handle AI stats
+        if self.show_ai_stats:
+            if not self.ai:
+                logger.error("AI capabilities required for AI stats")
+                return False
+
+            logger.info("Showing AI statistics")
+            stats = self.ai.get_stats()
+
+            # Print stats in a readable format
+            print("\nGZ AI Statistics")
+            print("===============")
+            print(f"Initialization time: {stats.get('initialization_time', 0):.2f} seconds")
+            print(f"Code samples processed: {stats.get('code_samples_processed', 0)}")
+            print(f"Corrections made: {stats.get('corrections_made', 0)}")
+            print(f"Optimizations applied: {stats.get('optimizations_applied', 0)}")
+
+            # Print memory stats
+            if 'memory' in stats:
+                print("\nMemory Statistics")
+                print("----------------")
+                for category, category_stats in stats['memory'].items():
+                    print(f"{category}: {category_stats.get('item_count', 0)} items")
+
+            # Print self-improvement stats
+            if 'self_improvement' in stats:
+                print("\nSelf-Improvement Statistics")
+                print("--------------------------")
+                si_stats = stats['self_improvement']
+                print(f"Total improvements: {si_stats.get('total_improvements', 0)}")
+                print(f"Successful improvements: {si_stats.get('successful_improvements', 0)}")
+                print(f"Last improvement: {si_stats.get('last_improvement', 'Never')}")
+
+            return True
+
+        # Regular compilation
         if not self.source_file and not self.generate_code:
             logger.error("No source file specified and no code generation requested")
             return False
@@ -271,6 +338,9 @@ def main():
     parser.add_argument("--ai-level", type=int, choices=range(1, 11), default=5, help="AI intelligence level (1-10)")
     parser.add_argument("--no-auto-correct", action="store_true", help="Disable auto-correction")
     parser.add_argument("--no-auto-optimize", action="store_true", help="Disable auto-optimization")
+    parser.add_argument("--no-auto-update", action="store_true", help="Disable GitHub auto-updates")
+    parser.add_argument("--force-update", action="store_true", help="Force an update to GitHub with new learnings")
+    parser.add_argument("--ai-stats", action="store_true", help="Show AI statistics")
     parser.add_argument("--ai-interactive", action="store_true", help="Enable interactive mode")
     parser.add_argument("--ai-model", default="models/gz_ai_model.bin", help="Path to AI model")
     parser.add_argument("-g", "--generate", help="Generate code from description")
