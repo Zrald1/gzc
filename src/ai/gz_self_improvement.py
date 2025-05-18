@@ -196,6 +196,19 @@ class SelfImprovement:
         try:
             # Create a temporary directory for the repository
             temp_dir = os.path.expanduser("~/.gz/temp_repo")
+
+            # Remove the directory if it already exists
+            if os.path.exists(temp_dir):
+                logger.info(f"Removing existing temp directory: {temp_dir}")
+                try:
+                    # Use Python's shutil module to remove the directory
+                    import shutil
+                    shutil.rmtree(temp_dir, ignore_errors=True)
+                    logger.info(f"Removed directory: {temp_dir}")
+                except Exception as e:
+                    logger.warning(f"Failed to remove directory: {temp_dir}, error: {str(e)}")
+
+            # Create the directory
             os.makedirs(temp_dir, exist_ok=True)
 
             # Clone the repository
@@ -340,7 +353,7 @@ class SelfImprovement:
         """Update correction rules based on learnings"""
         # Get correction learnings
         correction_learnings = [
-            learning for learning_id, learning in self.memory["collective_learnings"].items()
+            learning for _, learning in self.memory["collective_learnings"].items()
             if learning["type"] == "correction_rule" and learning["confidence"] > 0.6
         ]
 
@@ -405,7 +418,7 @@ class SelfImprovement:
         """Update optimization rules based on learnings"""
         # Get optimization learnings
         optimization_learnings = [
-            learning for learning_id, learning in self.memory["collective_learnings"].items()
+            learning for _, learning in self.memory["collective_learnings"].items()
             if learning["type"] == "optimization_rule" and learning["confidence"] > 0.6
         ]
 
@@ -470,7 +483,7 @@ class SelfImprovement:
         """Update code templates based on learnings"""
         # Get template learnings
         template_learnings = [
-            learning for learning_id, learning in self.memory["collective_learnings"].items()
+            learning for _, learning in self.memory["collective_learnings"].items()
             if learning["type"] == "code_template" and learning["confidence"] > 0.7
         ]
 
