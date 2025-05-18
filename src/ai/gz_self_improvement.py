@@ -14,8 +14,8 @@ import subprocess
 import hashlib
 import re
 import random
+import uuid
 from datetime import datetime
-from pathlib import Path
 
 # Set up logging
 logging.basicConfig(
@@ -194,19 +194,15 @@ class SelfImprovement:
     def _update_github(self):
         """Update the GitHub repository with new learnings"""
         try:
-            # Create a temporary directory for the repository
-            temp_dir = os.path.expanduser("~/.gz/temp_repo")
+            # Create a unique temporary directory for the repository
+            temp_base = os.path.expanduser("~/.gz/temp")
+            os.makedirs(temp_base, exist_ok=True)
 
-            # Remove the directory if it already exists
-            if os.path.exists(temp_dir):
-                logger.info(f"Removing existing temp directory: {temp_dir}")
-                try:
-                    # Use Python's shutil module to remove the directory
-                    import shutil
-                    shutil.rmtree(temp_dir, ignore_errors=True)
-                    logger.info(f"Removed directory: {temp_dir}")
-                except Exception as e:
-                    logger.warning(f"Failed to remove directory: {temp_dir}, error: {str(e)}")
+            # Generate a unique ID for this update
+            unique_id = str(uuid.uuid4())
+            temp_dir = os.path.join(temp_base, f"repo_{unique_id}")
+
+            logger.info(f"Using temporary directory: {temp_dir}")
 
             # Create the directory
             os.makedirs(temp_dir, exist_ok=True)
@@ -262,7 +258,12 @@ class SelfImprovement:
             subprocess.run(git_push_cmd, shell=True, check=True)
 
             # Clean up
-            subprocess.run(f"rm -rf {temp_dir}", shell=True, check=True)
+            try:
+                import shutil
+                shutil.rmtree(temp_dir, ignore_errors=True)
+                logger.info(f"Cleaned up temporary directory: {temp_dir}")
+            except Exception as e:
+                logger.warning(f"Failed to clean up temporary directory: {temp_dir}, error: {str(e)}")
 
             logger.info("Successfully updated GitHub repository")
             return True
